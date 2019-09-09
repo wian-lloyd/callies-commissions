@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- link properties -->
+    <link rel="icon" type="image/png" href="/resources/img/mood-happy.png">
+    <meta name="description" content="Callie website demo.">
+    <!-- <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/resources/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/resources/favicons/browserconfig.xml"> -->
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
+
+    <link rel="stylesheet" type="text/css" href="resources/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Chilanka|Montserrat:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(window).on('load', () => {
+            setTimeout(() => {
+                $('#content').removeClass('hidden');
+                $('#loader').addClass('hidden');
+            }, 1000);
+        });
+    </script>
+
+    <title>Callie's Commissions</title>
+</head>
+<body>
+    <div id="loader" style="height: 100vh; background-color: #fff;">
+        <img src="./resources/img/loader.gif" alt="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    </div>
+
+    <div id="content" class="hidden">
+        <header>
+            <nav>
+                <div class="row">
+                    <img src="/resources/img/callie_logo_white.svg" alt="logo" class="nav-logo">
+                    <ul class="main-nav">
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Gallery<ion-icon name="arrow-dropdown"></ion-icon></a>
+                            <ul class="sub-nav">
+                                <li><a href="#">Showcase</a></li>
+                                <li><a href="#">Progress</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Social<ion-icon name="arrow-dropdown"></ion-icon></a>
+                            <ul class="sub-nav">
+                                <li><a href="#">Discord</a></li>
+                                <li><a href="">Twitch</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Reviews<ion-icon name="arrow-dropdown"></ion-icon></a>
+                            <ul class="sub-nav">
+                                <li><a href="#">Amount</a></li>
+                                <li><a href="#">Customer Reviews</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Commissions<ion-icon name="arrow-dropdown"></ion-icon></a>
+                            <ul class="sub-nav">
+                                <li><a href="#">Options</a></li>
+                                <li><a href="#">Order</a></li>
+                                <li><a href="#">TOS</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="hero-text-box">
+                <h1>
+                    goodbye boring art.
+                    <br>
+                    hello amazing callie arts! 
+                </h1>
+                <a class="btn btn-full" href="#">I want a commission!</a>
+                <a class="btn btn-outline" href="#">Show me more</a>
+            </div>
+        </header>
+    
+        <main>
+        </main>
+    
+        <footer>
+            <div class="row">
+                <div class="col span-1-of-2">
+                    <ul class="footer-nav">
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                </div>
+                <div class="col span-1-of-2">
+                    <ul class="social-links">
+                        <li>
+                            <a href="https://twitter.com/callieearts" target="_blank" id="twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+                        </li>
+                        <li>
+                            <a href="https://discord.gg/cx79Hds" target="_blank" id="discord"><ion-icon name="logo-skype"></ion-icon></a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitch.tv/caatsucurry" target="_blank" id="twitch"><ion-icon name="logo-twitch"></ion-icon></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/coriwickk/" target="_blank" id="instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                        </li>
+                        <li>
+                            <a href="mailto:callieebusiness@gmail.com"><ion-icon name="mail" id="mail"></ion-icon></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Copyright &copy; 2019 by Callie. All rights reserved.
+                </p>
+            </div>
+            <div class="row">
+                <p id="special">
+                    Made with <ion-icon name="heart"></ion-icon> - <a href="https://twitter.com/LloydWian" target="_blank"> Wian LLoyd</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+
+    <script src="resources/script/script.js"></script>
+</body>
+</html>

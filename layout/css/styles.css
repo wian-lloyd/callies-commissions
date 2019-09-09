@@ -1,0 +1,317 @@
+/* ////////////////////
+	TABLE OF CONTENT
+
+	0. variables
+        0.1 colors
+        0.2 fonts
+
+    1. global
+        1.1 normalization
+		1.2 typography
+
+    2. components
+        2.1 buttons
+
+    3. sections
+        3.1 header
+//////////////////// */
+/* ====================
+	0. variables
+   ====================*/
+/* 0.1 colors */
+/* 0.2 fonts */
+/* if you can't see these, they are compiled away by scss */
+/* ====================
+	1. global
+   ====================*/
+/* 1.1 normalization */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  background-color: #FFFFFF;
+  color: #555;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+::-moz-selection {
+  background: #D4E09B;
+  /* WebKit/Blink Browsers */
+}
+
+::selection {
+  background: #D4E09B;
+  /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+  background: #D4E09B;
+  /* Gecko Browsers */
+}
+
+.hidden {
+  display: none;
+}
+
+/* 1.2 typography */
+/* ====================
+	2. components
+   ====================*/
+/* 2.1 buttons */
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 200px;
+  -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+  background-color: #EA9999;
+  border: 1px solid #EA9999;
+  color: #FFFFFF;
+  margin-right: 15px;
+}
+
+.btn-full:link:hover,
+.btn-full:visited:hover {
+  background-color: #E47D7D;
+  border: 1px solid #E47D7D;
+}
+
+.btn-full:link:active,
+.btn-full:visited:active {
+  background-color: #D4E09B;
+  border: 1px solid #D4E09B;
+}
+
+.btn-outline:link,
+.btn-outline:visited {
+  border: 1px solid #EA9999;
+  color: #EA9999;
+}
+
+.btn-outline:link:hover,
+.btn-outline:visited:hover {
+  background-color: #E47D7D;
+  border: 1px solid #E47D7D;
+  color: #FFFFFF;
+}
+
+.btn-outline:link:active,
+.btn-outline:visited:active {
+  background-color: #D4E09B;
+  border: 1px solid #D4E09B;
+  color: #FFFFFF;
+}
+
+/* ====================
+	3. sections
+   ====================*/
+/* 3.1 header */
+header {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(img/../../img/source.gif);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/../../img/source.gif);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+header nav .nav-logo {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-top: 20px;
+}
+
+header nav .main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 55px;
+}
+
+header nav .main-nav li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 40px;
+}
+
+header nav .main-nav li a:link, header nav .main-nav li a:visited {
+  padding: 8px 0;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 90%;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: border-bottom 0.2s, color 0.2s;
+  transition: border-bottom 0.2s, color 0.2s;
+}
+
+header nav .main-nav li a:hover {
+  border-bottom: 3px solid #EA9999;
+}
+
+header nav .main-nav li a:active {
+  color: #D4E09B;
+  border-bottom: 3px solid #D4E09B;
+}
+
+header nav .main-nav li:hover > .sub-nav li {
+  opacity: 1;
+  -webkit-transform: translate(0, 10px);
+          transform: translate(0, 10px);
+}
+
+header nav .main-nav li .sub-nav {
+  position: absolute;
+}
+
+header nav .main-nav li .sub-nav li {
+  -webkit-transform: translate(0, -10px);
+          transform: translate(0, -10px);
+  opacity: 0;
+  display: block;
+  margin-left: -15px;
+  padding: 12px 20px;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.3s;
+  transition: opacity 0.2s, -webkit-transform 0.3s;
+  transition: opacity 0.2s, transform 0.3s;
+  transition: opacity 0.2s, transform 0.3s, -webkit-transform 0.3s;
+}
+
+header #hero-text-box {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+header #hero-text-box h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+  font-size: 240%;
+  font-weight: 100;
+  font-family: "Chilanka", cursive;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  word-spacing: 4px;
+}
+
+/* 3.2 footer */
+footer {
+  background-color: #333333;
+  padding: 60px 0 100px 0;
+}
+
+footer .footer-nav,
+footer .social-links {
+  list-style: none;
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+footer .footer-nav li,
+footer .social-links li {
+  margin: 0 5px;
+  display: inline-block;
+}
+
+footer .footer-nav li a,
+footer .social-links li a {
+  color: #555;
+  text-decoration: none;
+}
+
+footer .footer-nav {
+  font-size: 80%;
+  float: left;
+}
+
+footer .footer-nav li a {
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+footer .footer-nav li a:hover {
+  color: #FFFFFF;
+}
+
+footer .social-links {
+  float: right;
+}
+
+footer .social-links li {
+  font-size: 150%;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+footer .social-links li #twitter,
+footer .social-links li #discord,
+footer .social-links li #twitch,
+footer .social-links li #instagram,
+footer .social-links li #mail {
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+footer .social-links li #twitter:hover {
+  color: #1DA1F2;
+}
+
+footer .social-links li #discord:hover {
+  color: #7289DA;
+}
+
+footer .social-links li #twitch:hover {
+  color: #6441A4;
+}
+
+footer .social-links li #instagram:hover {
+  color: #CD3081;
+}
+
+footer .social-links li #mail:hover {
+  color: #EA9999;
+}
+
+footer p,
+footer #special {
+  font-size: 70%;
+  font-weight: 600;
+  text-align: center;
+}
+
+footer #special {
+  font-family: "Chilanka", cursive;
+}
+
+footer #special a {
+  color: #555;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+footer #special a:hover {
+  color: #1DA1F2;
+}
+/*# sourceMappingURL=styles.css.map */

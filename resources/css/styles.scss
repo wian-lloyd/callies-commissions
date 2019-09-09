@@ -1,0 +1,315 @@
+
+/* ////////////////////
+	TABLE OF CONTENT
+
+	0. variables
+        0.1 colors
+        0.2 fonts
+
+    1. global
+        1.1 normalization
+		1.2 typography
+
+    2. components
+        2.1 buttons
+
+    3. sections
+        3.1 header
+//////////////////// */
+
+/* ====================
+	0. variables
+   ====================*/
+    /* 0.1 colors */
+    $color-primary: #EA9999; // light salmon pink
+    $color-primary-hover: #E47D7D;
+    $color-secondary: #D4E09B; // medium spring bud
+    $color-background: #FFFFFF;
+    $color-background-contrast: #f4f4f4;
+    $color-background-dark: #333333;
+    $color-font: #555;
+
+    /* 0.2 fonts */
+    $font-primary: 'Montserrat', sans-serif;
+    $font-secondary: 'Chilanka', cursive;
+
+    /* if you can't see these, they are compiled away by scss */
+
+/* ====================
+	1. global
+   ====================*/
+   /* 1.1 normalization */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;  
+    } // default clears
+
+    html {
+        background-color: $color-background;
+        color: $color-font;
+        font-family: $font-primary;
+        font-weight: 300;
+        font-size: 20px;
+        text-rendering: optimizeLegibility;
+    } // base settings
+
+    .row {
+        max-width: 1140px;
+        margin: 0 auto;
+    } // initial setup for fluid grid
+
+    ::selection {
+        background: $color-secondary; /* WebKit/Blink Browsers */
+    }
+    ::-moz-selection {
+        background: $color-secondary; /* Gecko Browsers */
+    } // change the text selection color
+
+    .hidden {
+        display: none;
+    }
+    /* 1.2 typography */
+
+/* ====================
+	2. components
+   ====================*/
+   /* 2.1 buttons */
+   
+    .btn:link,
+    .btn:visited {
+        display: inline-block;
+        padding: 10px 30px;
+        font-weight: 300;
+        text-decoration: none;
+        border-radius: 200px;
+        transition: background-color 0.2s, border 0.2s, color 0.2s;
+    }
+
+    .btn-full:link,
+    .btn-full:visited {
+        background-color: $color-primary;
+        border: 1px solid $color-primary;
+        color: $color-background;
+        margin-right: 15px;
+
+        &:hover {
+            background-color: $color-primary-hover;
+            border: 1px solid $color-primary-hover;
+        }
+
+        &:active {
+            background-color: $color-secondary;
+            border: 1px solid $color-secondary;
+        }
+    }
+
+    .btn-outline:link,
+    .btn-outline:visited {
+        border: 1px solid $color-primary;
+        color: $color-primary;
+
+        &:hover {
+            background-color: $color-primary-hover;
+            border: 1px solid $color-primary-hover;
+            color: $color-background;
+        }
+
+        &:active {
+            background-color: $color-secondary;
+            border: 1px solid $color-secondary;
+            color: $color-background;
+        }
+    }
+
+/* ====================
+	3. sections
+   ====================*/
+   /* 3.1 header */
+
+    header {
+        nav {
+            .nav-logo {
+                height: 100px;
+                width: auto;
+                float: left;
+                margin-top: 20px;
+            }
+
+            .main-nav {
+                float: right;
+                list-style: none;
+                margin-top: 55px;
+
+                li {
+                    list-style: none;
+                    display: inline-block;
+                    margin-left: 40px;
+
+                    a {
+                        &:link,
+                        &:visited {
+                            padding: 8px 0;
+                            color: $color-background;
+                            text-decoration: none;
+                            font-size: 90%;
+                            border-bottom: 3px solid transparent;
+                            transition: border-bottom 0.2s, color 0.2s;
+                        }
+
+                        &:hover {
+                            border-bottom: 3px solid $color-primary;
+                        }
+
+                        &:active {
+                            color: $color-secondary;
+                            border-bottom: 3px solid $color-secondary;
+                        }
+                    }
+
+                    &:hover > .sub-nav {
+                        // display: block;
+
+                        li {
+                            opacity: 1;
+                            transform: translate(0, 10px);
+                        }
+                    }
+
+                    .sub-nav {
+                        position: absolute;
+                        // display: none;
+                        // padding-top: 5px;
+
+                        li {
+                            transform: translate(0, -10px);
+                            opacity: 0;
+                            display: block;
+                            margin-left: -15px;
+                            padding: 12px 20px;
+                            transition: opacity 0.2s, transform 0.3s; 
+                        }
+                    }
+                }
+            }
+        }
+
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/../../img/source.gif);
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+
+        #hero-text-box {
+            position: absolute;
+            width: 1140px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            h1 {
+                margin-top: 0;
+                margin-bottom: 20px;
+                color: $color-background;
+                font-size: 240%;
+                font-weight: 100;
+                font-family: $font-secondary;
+                text-transform: lowercase;
+                letter-spacing: 1px;
+                word-spacing: 4px;
+            }
+        }
+    }
+
+   /* 3.2 footer */
+
+   footer {
+        background-color: $color-background-dark;
+        padding: 60px 0 100px 0;
+
+        .footer-nav,
+        .social-links {
+            list-style: none;
+            display: inline-block;
+            margin-bottom: 50px;
+
+            li {
+                margin: 0 5px;
+                display: inline-block;
+
+                a {
+                    color: $color-font;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .footer-nav {
+            font-size: 80%;
+            float: left;
+
+            li a {
+                transition: color 0.2s;
+
+                &:hover {
+                    color: $color-background;
+                }
+            }
+        }
+        .social-links {
+            float: right;
+
+            li {
+                font-size: 150%;
+                transition: color 0.2s;
+
+                #twitter,
+                #discord,
+                #twitch,
+                #instagram,
+                #mail {
+                    transition: color 0.2s;
+                }
+
+                #twitter:hover {
+                    color: #1DA1F2;
+                }
+
+                #discord:hover {
+                    color: #7289DA;
+                }
+
+                #twitch:hover {
+                    color: #6441A4;
+                }
+
+                #instagram:hover {
+                    color: #CD3081;
+                }
+
+                #mail:hover {
+                    color: $color-primary;
+                }
+            }
+        }
+
+        p,
+        #special {
+            font-size: 70%;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        #special {
+            font-family: $font-secondary;
+
+            a {
+                color: $color-font;
+                text-decoration: none; 
+                transition: color 0.2s;
+
+                &:hover {
+                    color: #1DA1F2;
+                }
+            }
+        }
+   }
