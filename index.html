@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- link properties -->
-    <link rel="icon" type="image/png" href="/resources/img/mood-happy.png">
+    <link rel="icon" type="image/png" href="/resources/img/callie_favicon.png">
     <meta name="description" content="Callie website demo.">
     <!-- <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="/resources/favicons/mstile-144x144.png">
@@ -24,21 +24,22 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Chilanka|Montserrat:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
 
+    <!-- loader -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript">
         $(window).on('load', () => {
             setTimeout(() => {
                 $('#content').removeClass('hidden');
                 $('#loader').addClass('hidden');
-            }, 1000);
+            }, 2000);
         });
     </script>
 
     <title>Callie's Commissions</title>
 </head>
 <body>
-    <div id="loader" style="height: 100vh; background-color: #fff;">
-        <img src="./resources/img/loader.gif" alt="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <div id="loader">
+        <img src="./resources/img/loader-hd.gif" alt="loader">
     </div>
 
     <div id="content" class="hidden">
@@ -139,8 +140,6 @@
             </div>
         </footer>
     </div>
-
-
 
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>

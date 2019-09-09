@@ -14,7 +14,9 @@
         2.1 buttons
 
     3. sections
+        3.0 loader
         3.1 header
+        3.2 footer
 //////////////////// */
 
 /* ====================
@@ -125,6 +127,20 @@
 /* ====================
 	3. sections
    ====================*/
+   /* 3.0 loader */
+    #loader {
+        height: 100vh; 
+        background-color: $color-background-dark;
+
+        img {
+            height:600px; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+        }
+    }
+
    /* 3.1 header */
 
     header {

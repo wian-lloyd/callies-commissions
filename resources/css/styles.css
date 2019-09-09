@@ -13,7 +13,9 @@
         2.1 buttons
 
     3. sections
+        3.0 loader
         3.1 header
+        3.2 footer
 //////////////////// */
 /* ====================
 	0. variables
@@ -124,6 +126,21 @@ html {
 /* ====================
 	3. sections
    ====================*/
+/* 3.0 loader */
+#loader {
+  height: 100vh;
+  background-color: #333333;
+}
+
+#loader img {
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 /* 3.1 header */
 header {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(img/../../img/source.gif);
