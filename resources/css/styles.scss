@@ -9,21 +9,28 @@
 
     1. global
         1.1 normalization
-		1.2 typography
+        1.2 typography
+            1.2.1 headers
+            1.2.2 paragraphs
+            1.2.3 icons
 
     2. components
         2.1 buttons
+        2.2 sections
 
     3. sections
         3.0 loader
         3.1 header
         3.2 footer
+        commission terms of service
 //////////////////// */
 
 /* ====================
 	0. variables
    ====================*/
+
     /* 0.1 colors */
+
     $color-primary: #EA9999; // light salmon pink
     $color-primary-hover: #E47D7D;
     $color-secondary: #D4E09B; // medium spring bud
@@ -33,21 +40,34 @@
     $color-font: #555;
 
     /* 0.2 fonts */
+
     $font-primary: 'Montserrat', sans-serif;
     $font-secondary: 'Chilanka', cursive;
 
     /* 0.3 social colors */
+
     $color-brand-twitter: #1DA1F2;
     $color-brand-discord: #7289DA;
     $color-brand-twitch: #6441A4;
     $color-brand-instagram: #CD3081;
+    $color-brand-reddit: #FF4500;
+    $color-brand-linkedin: #0271AE;
+    $color-brand-github: #E94E32;
+    $color-brand-facebook: #1774EB;
+    $color-brand-spotify: #1AD15C;
+    $color-brand-stackoverflow: #EC771F;
+    $color-brand-youtube: #F80000;
+    $color-brand-mixer: #001F4E;
+    $color-brand-steam: #0C1C49;
 
     /* if you can't see these, they are compiled away by scss */
 
 /* ====================
 	1. global
    ====================*/
+
    /* 1.1 normalization */
+
     * {
       margin: 0;
       padding: 0;
@@ -78,11 +98,90 @@
     .hidden {
         display: none;
     }
+
     /* 1.2 typography */
+
+        /* 1.2.1 headers */
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 300;
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 240%;
+            word-spacing: 4px;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-family: $font-secondary;
+            font-size: 180%;
+            word-spacing: 2px;
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+        
+        h3 {
+            font-size: 110%;
+            margin-bottom: 15px;
+        }
+
+        h2:after {
+            display: block;
+            height: 3px;
+            background-color: $color-primary;
+            content: " ";
+            width: 100px;
+            margin: 0 auto;
+            margin-top: 30px;
+        } // accent after section headers
+
+        /* 1.2.2 paragraphs */
+
+        .long-copy {
+            line-height: 145%;
+            width: 70%;
+            margin-left: 15%;
+        }
+        
+        .box p {
+            font-size: 90%;
+            line-height: 145%;
+        }
+
+        /* 1.2.3 icons */
+
+        .icon-big {
+            font-size: 350%;
+            display: block;
+            color: $color-primary;
+            margin-bottom: 10px;
+        }
+        
+        .icon-small {
+            display: inline-block;
+            width: 30px;
+            text-align: center;
+            color: $color-primary;
+            font-size: 120%;
+            margin-right: 10px;
+            
+            /*secrets to align text and icons*/
+            line-height: 120%;
+            vertical-align: middle;
+            margin-top: -5px;
+        }
 
 /* ====================
 	2. components
    ====================*/
+
    /* 2.1 buttons */
    
     .btn:link,
@@ -131,10 +230,18 @@
         }
     }
 
+    /* 2.2 sections */
+
+    section {
+        padding: 80px 0;
+    }
+
 /* ====================
 	3. sections
    ====================*/
+
    /* 3.0 loader */
+
     #loader {
         height: 100vh; 
         background-color: $color-background-dark;
@@ -336,3 +443,36 @@
             }
         }
    }
+
+    /* commission terms of service */
+    .section-terms {
+        background-color: $color-background;
+
+        .box{
+            padding: 1%;
+
+            p {
+                text-transform: uppercase;
+                font-size: 80%;
+            }
+        }
+
+        .long-copy {
+            margin-bottom: 80px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            margin: 10% 0% 12% 0%; 
+        }
+
+        ul li {
+            list-style: none;
+            font-weight: 100;
+            margin: 15px 0px;
+            font-size: 80%;
+        }
+
+    }
