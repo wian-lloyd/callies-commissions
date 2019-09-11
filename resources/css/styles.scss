@@ -5,6 +5,7 @@
 	0. variables
         0.1 colors
         0.2 fonts
+        0.3 social colors
 
     1. global
         1.1 normalization
@@ -34,6 +35,12 @@
     /* 0.2 fonts */
     $font-primary: 'Montserrat', sans-serif;
     $font-secondary: 'Chilanka', cursive;
+
+    /* 0.3 social colors */
+    $color-brand-twitter: #1DA1F2;
+    $color-brand-discord: #7289DA;
+    $color-brand-twitch: #6441A4;
+    $color-brand-instagram: #CD3081;
 
     /* if you can't see these, they are compiled away by scss */
 
@@ -133,7 +140,7 @@
         background-color: $color-background-dark;
 
         img {
-            height:600px; 
+            height: 300px; 
             position: absolute; 
             top: 50%; 
             left: 50%; 
@@ -210,7 +217,7 @@
             }
         }
 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/../../img/source.gif);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/../../../img/source.gif);
         background-size: cover;
         background-position: center;
         height: 100vh;
@@ -287,19 +294,19 @@
                 }
 
                 #twitter:hover {
-                    color: #1DA1F2;
+                    color: $color-brand-twitter;
                 }
 
                 #discord:hover {
-                    color: #7289DA;
+                    color: $color-brand-discord;
                 }
 
                 #twitch:hover {
-                    color: #6441A4;
+                    color: $color-brand-twitch;
                 }
 
                 #instagram:hover {
-                    color: #CD3081;
+                    color: $color-brand-instagram;
                 }
 
                 #mail:hover {
@@ -324,7 +331,7 @@
                 transition: color 0.2s;
 
                 &:hover {
-                    color: #1DA1F2;
+                    color: $color-brand-twitter;
                 }
             }
         }
