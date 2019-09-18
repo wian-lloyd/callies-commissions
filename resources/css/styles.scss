@@ -59,6 +59,7 @@
     $color-brand-youtube: #F80000;
     $color-brand-mixer: #001F4E;
     $color-brand-steam: #0C1C49;
+    $color-brand-deviantart: #05C645;
 
     /* if you can't see these, they are compiled away by scss */
 
@@ -157,26 +158,29 @@
 
         /* 1.2.3 icons */
 
-        .icon-big {
-            font-size: 350%;
-            display: block;
-            color: $color-primary;
-            margin-bottom: 10px;
-        }
-        
-        .icon-small {
-            display: inline-block;
-            width: 30px;
-            text-align: center;
-            color: $color-primary;
-            font-size: 120%;
-            margin-right: 10px;
+        .icon {
+            &--big {
+                font-size: 350%;
+                display: block;
+                color: $color-primary;
+                margin-bottom: 10px;
+            }
             
-            /*secrets to align text and icons*/
-            line-height: 120%;
-            vertical-align: middle;
-            margin-top: -5px;
+            &--small {
+                display: inline-block;
+                width: 30px;
+                text-align: center;
+                color: $color-primary;
+                font-size: 120%;
+                margin-right: 10px;
+                
+                /*secrets to align text and icons*/
+                line-height: 120%;
+                vertical-align: middle;
+                margin-top: -5px;
+            }
         }
+
 
 /* ====================
 	2. components
@@ -184,49 +188,51 @@
 
    /* 2.1 buttons */
    
-    .btn:link,
-    .btn:visited {
-        display: inline-block;
-        padding: 10px 30px;
-        font-weight: 300;
-        text-decoration: none;
-        border-radius: 200px;
-        transition: background-color 0.2s, border 0.2s, color 0.2s;
-    }
-
-    .btn-full:link,
-    .btn-full:visited {
-        background-color: $color-primary;
-        border: 1px solid $color-primary;
-        color: $color-background;
-        margin-right: 15px;
-
-        &:hover {
-            background-color: $color-primary-hover;
-            border: 1px solid $color-primary-hover;
+    .btn {
+        &:link,
+        &:visited {
+            display: inline-block;
+            padding: 10px 30px;
+            font-weight: 300;
+            text-decoration: none;
+            border-radius: 200px;
+            transition: background-color 0.2s, border 0.2s, color 0.2s;
         }
 
-        &:active {
-            background-color: $color-secondary;
-            border: 1px solid $color-secondary;
-        }
-    }
-
-    .btn-outline:link,
-    .btn-outline:visited {
-        border: 1px solid $color-primary;
-        color: $color-primary;
-
-        &:hover {
-            background-color: $color-primary-hover;
-            border: 1px solid $color-primary-hover;
+        &--full:link,
+        &--full:visited {
+            background-color: $color-primary;
+            border: 1px solid $color-primary;
             color: $color-background;
+            margin-right: 15px;
+    
+            &:hover {
+                background-color: $color-primary-hover;
+                border: 1px solid $color-primary-hover;
+            }
+    
+            &:active {
+                background-color: $color-secondary;
+                border: 1px solid $color-secondary;
+            }
         }
 
-        &:active {
-            background-color: $color-secondary;
-            border: 1px solid $color-secondary;
-            color: $color-background;
+        &--outline:link,
+        &--outline:visited {
+            border: 1px solid $color-primary;
+            color: $color-primary;
+    
+            &:hover {
+                background-color: $color-primary-hover;
+                border: 1px solid $color-primary-hover;
+                color: $color-background;
+            }
+    
+            &:active {
+                background-color: $color-secondary;
+                border: 1px solid $color-secondary;
+                color: $color-background;
+            }
         }
     }
 
@@ -242,11 +248,11 @@
 
    /* 3.0 loader */
 
-    #loader {
+    .loader {
         height: 100vh; 
         background-color: $color-background-dark;
 
-        img {
+        &__img {
             height: 300px; 
             position: absolute; 
             top: 50%; 
@@ -259,7 +265,7 @@
 
     header {
         nav {
-            .nav-logo {
+            .nav__logo {
                 height: 100px;
                 width: auto;
                 float: left;
@@ -271,12 +277,16 @@
                 list-style: none;
                 margin-top: 55px;
 
-                li {
+                &__item {
                     list-style: none;
                     display: inline-block;
                     margin-left: 40px;
 
-                    a {
+                    .anchor {
+                        &--main {}
+
+                        &--sub {}
+
                         &:link,
                         &:visited {
                             padding: 8px 0;
@@ -298,20 +308,17 @@
                     }
 
                     &:hover > .sub-nav {
-                        // display: block;
 
-                        li {
+                        .sub-nav__item {
                             opacity: 1;
                             transform: translate(0, 10px);
                         }
-                    }
+                    } // by hovering a main-nav item, show the sub-nav
 
                     .sub-nav {
                         position: absolute;
-                        // display: none;
-                        // padding-top: 5px;
 
-                        li {
+                        &__item {
                             transform: translate(0, -10px);
                             opacity: 0;
                             display: block;
@@ -329,14 +336,16 @@
         background-position: center;
         height: 100vh;
 
-        #hero-text-box {
-            position: absolute;
-            width: 1140px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .hero {
+            &__text-box {
+                position: absolute;
+                width: 1140px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
 
-            h1 {
+            &__main-text {
                 margin-top: 0;
                 margin-bottom: 20px;
                 color: $color-background;
@@ -356,95 +365,95 @@
         background-color: $color-background-dark;
         padding: 60px 0 100px 0;
 
-        .footer-nav,
-        .social-links {
-            list-style: none;
-            display: inline-block;
-            margin-bottom: 50px;
+        .footer {
+            &__text-links,
+            &__social-links {
+                list-style: none;
+                display: inline-block;
+                margin-bottom: 50px;
+            }
 
-            li {
+            &__links {
                 margin: 0 5px;
                 display: inline-block;
 
-                a {
+                .link {
+                    &--text,
+                    &--icon {
+                        color: $color-font;
+                        text-decoration: none;
+                        transition: color 0.2s;
+                    }
+                }
+            }
+
+            &__text-links {
+                font-size: 80%;
+                float: left;
+    
+                .link--text {
+    
+                    &:hover {
+                        color: $color-background;
+                    }
+                }
+            }
+
+            &__social-links {
+                float: right;
+    
+                .link--icon {
+                    font-size: 150%;
+    
+                    &--twitter:hover {
+                        color: $color-brand-twitter;
+                    }
+    
+                    &--discord:hover {
+                        color: $color-brand-discord;
+                    }
+    
+                    &--twitch:hover {
+                        color: $color-brand-twitch;
+                    }
+    
+                    &--instagram:hover {
+                        color: $color-brand-instagram;
+                    }
+    
+                    &--mail:hover {
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+
+        .copyright {
+            &__text,
+            &__credits {
+                font-size: 70%;
+                font-weight: 600;
+                text-align: center;
+            }
+
+            &__credits {
+                font-family: $font-secondary;
+
+                &--social-link {
                     color: $color-font;
-                    text-decoration: none;
-                }
-            }
-        }
-
-        .footer-nav {
-            font-size: 80%;
-            float: left;
-
-            li a {
-                transition: color 0.2s;
-
-                &:hover {
-                    color: $color-background;
-                }
-            }
-        }
-        .social-links {
-            float: right;
-
-            li {
-                font-size: 150%;
-                transition: color 0.2s;
-
-                #twitter,
-                #discord,
-                #twitch,
-                #instagram,
-                #mail {
+                    text-decoration: none; 
                     transition: color 0.2s;
-                }
 
-                #twitter:hover {
-                    color: $color-brand-twitter;
-                }
-
-                #discord:hover {
-                    color: $color-brand-discord;
-                }
-
-                #twitch:hover {
-                    color: $color-brand-twitch;
-                }
-
-                #instagram:hover {
-                    color: $color-brand-instagram;
-                }
-
-                #mail:hover {
-                    color: $color-primary;
-                }
-            }
-        }
-
-        p,
-        #special {
-            font-size: 70%;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        #special {
-            font-family: $font-secondary;
-
-            a {
-                color: $color-font;
-                text-decoration: none; 
-                transition: color 0.2s;
-
-                &:hover {
-                    color: $color-brand-twitter;
+                    &:hover {
+                        color: $color-brand-twitter;
+                    }
                 }
             }
         }
    }
 
     /* commission terms of service */
+    // TODO: reconfigure to use BEM
     .section-terms {
         background-color: $color-background;
 
