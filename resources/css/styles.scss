@@ -22,6 +22,8 @@
         3.0 loader
         3.1 header
         3.2 footer
+        showcase
+        reviews
         commission terms of service
 //////////////////// */
 
@@ -283,14 +285,17 @@
                     margin-left: 40px;
 
                     .anchor {
-                        &--main {}
+                        &--main {
+                            color: $color-background;
+                        }
 
-                        &--sub {}
+                        &--sub {
+                            color: $color-background;
+                        }
 
                         &:link,
                         &:visited {
                             padding: 8px 0;
-                            color: $color-background;
                             text-decoration: none;
                             font-size: 90%;
                             border-bottom: 3px solid transparent;
@@ -453,6 +458,44 @@
         }
    }
 
+   /* showcase */
+   .section-showcase {
+        padding: 0px;
+
+        .showcase {
+            list-style: none;
+            width: 100%;
+            overflow: hidden;
+            
+            &_item {
+                display: block;
+                float: left;
+                width: 25%;
+            }
+
+            &_photo {
+                width: 100%;
+                margin: 0px;
+                overflow: hidden;
+                background-color: #000;
+
+                img {
+                    opacity: 0.6;
+                    width: 100%;
+                    height: auto;
+                    transform: scale(1.18);
+                    transition: transform 0.5s, opacity 0.5s;
+
+                    &:hover {
+                        opacity: 1;
+                        transform: scale(1.03); 
+                    }
+                }
+            }
+        }
+   }
+
+
     /* reviews */
     .section-reviews {
         background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/../../../img/original.gif);
@@ -480,6 +523,7 @@
                 font-size: 90%;
                 margin-top: 25px;
                 display: block;
+                font-family: $font-secondary;
 
                 img {
                     height: 45px;
