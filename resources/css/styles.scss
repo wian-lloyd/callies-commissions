@@ -22,6 +22,8 @@
         3.0 loader
         3.1 header
         3.2 footer
+        showcase
+        reviews
         commission terms of service
 //////////////////// */
 
@@ -266,7 +268,7 @@
     header {
         nav {
             .nav__logo {
-                height: 100px;
+                height: 200px;
                 width: auto;
                 float: left;
                 margin-top: 20px;
@@ -283,14 +285,17 @@
                     margin-left: 40px;
 
                     .anchor {
-                        &--main {}
+                        &--main {
+                            color: $color-background;
+                        }
 
-                        &--sub {}
+                        &--sub {
+                            color: $color-background;
+                        }
 
                         &:link,
                         &:visited {
                             padding: 8px 0;
-                            color: $color-background;
                             text-decoration: none;
                             font-size: 90%;
                             border-bottom: 3px solid transparent;
@@ -334,6 +339,7 @@
         background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/../../../img/source.gif);
         background-size: cover;
         background-position: center;
+        background-attachment: fixed;
         height: 100vh;
 
         .hero {
@@ -352,7 +358,7 @@
                 font-size: 240%;
                 font-weight: 100;
                 font-family: $font-secondary;
-                text-transform: lowercase;
+                // text-transform: lowercase;
                 letter-spacing: 1px;
                 word-spacing: 4px;
             }
@@ -451,6 +457,84 @@
             }
         }
    }
+
+   /* showcase */
+   .section-showcase {
+        padding: 0px;
+
+        .showcase {
+            list-style: none;
+            width: 100%;
+            overflow: hidden;
+            
+            &_item {
+                display: block;
+                float: left;
+                width: 25%;
+            }
+
+            &_photo {
+                width: 100%;
+                margin: 0px;
+                overflow: hidden;
+                background-color: #000;
+
+                img {
+                    opacity: 0.6;
+                    width: 100%;
+                    height: auto;
+                    transform: scale(1.18);
+                    transition: transform 0.5s, opacity 0.5s;
+
+                    &:hover {
+                        opacity: 1;
+                        transform: scale(1.03); 
+                    }
+                }
+            }
+        }
+   }
+
+
+    /* reviews */
+    .section-reviews {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/../../../img/original.gif);
+        background-size: cover;
+        color: $color-background;
+        background-attachment: fixed;
+
+        blockquote {
+            padding: 2%;
+            margin-top: 40px;
+            font-style: italic;
+            line-height: 140%;
+            position: relative;
+
+            &:before {
+                content: "\201C";
+                font-size: 500%;
+                display: block;
+                position: absolute;
+                top: -5px;
+                left: -5px;
+            }
+
+            cite {
+                font-size: 90%;
+                margin-top: 25px;
+                display: block;
+                font-family: $font-secondary;
+
+                img {
+                    height: 45px;
+                    width: 45;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
 
     /* commission terms of service */
     // TODO: reconfigure to use BEM
