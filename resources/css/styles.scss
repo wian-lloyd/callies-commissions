@@ -266,7 +266,7 @@
     header {
         nav {
             .nav__logo {
-                height: 100px;
+                height: 200px;
                 width: auto;
                 float: left;
                 margin-top: 20px;
@@ -334,6 +334,7 @@
         background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/../../../img/source.gif);
         background-size: cover;
         background-position: center;
+        background-attachment: fixed;
         height: 100vh;
 
         .hero {
@@ -352,7 +353,7 @@
                 font-size: 240%;
                 font-weight: 100;
                 font-family: $font-secondary;
-                text-transform: lowercase;
+                // text-transform: lowercase;
                 letter-spacing: 1px;
                 word-spacing: 4px;
             }
@@ -451,6 +452,45 @@
             }
         }
    }
+
+    /* reviews */
+    .section-reviews {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/../../../img/original.gif);
+        background-size: cover;
+        color: $color-background;
+        background-attachment: fixed;
+
+        blockquote {
+            padding: 2%;
+            margin-top: 40px;
+            font-style: italic;
+            line-height: 140%;
+            position: relative;
+
+            &:before {
+                content: "\201C";
+                font-size: 500%;
+                display: block;
+                position: absolute;
+                top: -5px;
+                left: -5px;
+            }
+
+            cite {
+                font-size: 90%;
+                margin-top: 25px;
+                display: block;
+
+                img {
+                    height: 45px;
+                    width: 45;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
 
     /* commission terms of service */
     // TODO: reconfigure to use BEM
