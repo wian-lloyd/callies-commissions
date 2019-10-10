@@ -6,6 +6,7 @@
         0.1 colors
         0.2 fonts
         0.3 social colors
+        0.4 tech colors 
 
     1. global
         1.1 normalization
@@ -62,6 +63,14 @@
     $color-brand-mixer: #001F4E;
     $color-brand-steam: #0C1C49;
     $color-brand-deviantart: #05C645;
+
+    /* 0.4 tech colors */
+
+    $color-tech-sass: #CF649A;
+    $color-tech-html: #E34F26;
+    $color-tech-js: #FFDA07;
+    $color-tech-gitKraken: #179287;
+
 
     /* if you can't see these, they are compiled away by scss */
 
@@ -400,11 +409,40 @@
             &__text-links {
                 font-size: 80%;
                 float: left;
-    
+
                 .link--text {
     
                     &:hover {
                         color: $color-background;
+                    }
+                }
+
+                .tech {
+                    margin-top: 5%;
+                    text-align: center;
+
+                    .link--icon {
+                        font-size: 150%;
+    
+                        &--sass:hover {
+                            color: $color-tech-sass;
+                        }
+    
+                        &--html:hover {
+                            color: $color-tech-html;
+                        }
+    
+                        &--js:hover {
+                            color: $color-tech-js;
+                        }
+
+                        &--git:hover {
+                            color: $color-brand-github;
+                        }
+
+                        &--gitkraken:hover {
+                            color: $color-tech-gitKraken;
+                        }
                     }
                 }
             }
