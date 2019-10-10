@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="resources/css/compiled/queries.min.css">
 
     <!-- fonts -->
+    <script src="https://kit.fontawesome.com/9bd1b197fc.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Chilanka|Montserrat:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
 
     <!-- loader -->
@@ -53,28 +54,28 @@
                             <a class="anchor anchor--main" href="#">About</a>
                         </li>
                         <li class="main-nav__item">
-                            <a class="anchor anchor--main" href="#">Gallery<ion-icon name="arrow-dropdown"></ion-icon></a>
+                            <a class="anchor anchor--main" href="#">Gallery<i class="fas fa-angle-down"></i></a>
                             <ul class="sub-nav">
                                 <li class="sub-nav__item"><a class="anchor anchor--sub" href="#showcase">Showcase</a></li>
                                 <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Progress</a></li>
                             </ul>
                         </li>
                         <li class="main-nav__item">
-                            <a class="anchor anchor--main" href="#">Social<ion-icon name="arrow-dropdown"></ion-icon></a>
+                            <a class="anchor anchor--main" href="#">Social<i class="fas fa-angle-down"></i></a>
                             <ul class="sub-nav">
                                 <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Discord</a></li>
                                 <li class="sub-nav__item"><a class="anchor anchor--sub" href="">Twitch</a></li>
                             </ul>
                         </li>
                         <li class="main-nav__item">
-                            <a class="anchor anchor--main" href="#">Reviews<ion-icon name="arrow-dropdown"></ion-icon></a>
+                            <a class="anchor anchor--main" href="#">Reviews<i class="fas fa-angle-down"></i></a>
                             <ul class="sub-nav">
                                 <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Amount</a></li>
                                 <li class="sub-nav__item"><a class="anchor anchor--sub" href="#reviews">Customer Reviews</a></li>
                             </ul>
                         </li>
                         <li class="main-nav__item">
-                            <a class="anchor anchor--main"href="#">Commissions<ion-icon name="arrow-dropdown"></ion-icon></a>
+                            <a class="anchor anchor--main"href="#">Commissions<i class="fas fa-angle-down"></i></a>
                             <ul class="sub-nav">
                                 <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Options</a></li>
                                 <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Order</a></li>
@@ -153,7 +154,7 @@
                 </div>
                 <div class="row">
                     <div class="col span-1-of-4 box">
-                        <ion-icon class="icon icon--big" name="pricetags"></ion-icon>
+                        <i class="fas fa-hand-holding-usd icon icon--big"></i>
                         <h3>Payments</h3>
                         <ul>
                             <li>All commissions must be paid full price upfront before I can start. </li>
@@ -161,7 +162,7 @@
                         </ul>
                     </div>
                     <div class="col span-1-of-4 box">
-                        <ion-icon class="icon icon--big" name="swap"></ion-icon>
+                        <i class="fas fa-hands-helping icon icon--big"></i>
                         <h3>Process</h3>
                         <ul>
                             <li>Contact via Discord, Twitter or Instagram to begin talking about commission details. </li>
@@ -171,7 +172,7 @@
                         </ul>
                     </div>
                     <div class="col span-1-of-4 box">
-                        <ion-icon class="icon icon--big" name="close-circle"></ion-icon>
+                        <i class="fas fa-times icon icon--big"></i>
                         <h3>Refunds/Cancelling</h3>
                         <ul>
                             <li>Callie has the right to cancel a commission at any point during the commission process. </li>
@@ -180,7 +181,7 @@
                         </ul>
                     </div>
                     <div class="col span-1-of-4 box">
-                        <ion-icon class="icon icon--big" name="bulb"></ion-icon>
+                        <i class="fas fa-kiss-wink-heart icon icon--big"></i>
                         <h3>Things to expect</h3>
                         <p>Clients should expect Callie to: </p>
                         <ul>
@@ -234,28 +235,48 @@
             <div class="footer row">
                 <div class="col span-1-of-2 footer">
                     <ul class="footer__text-links">
-                        <li class="footer__links"><a class="link--text" href="./sitemap.xml" target="_blank">Sitemap</a></li>
-                        <li class="footer__links"><a class="link--text" href="https://github.com/wian-lloyd/callies-commissions/" target="_blank">Source code</a></li>
-                        <li class="footer__links"><a class="link--text" href="#" target="_blank">Terms & Conditions</a></li>
+                        <div class="row">
+                            <li class="footer__links"><a class="link--text" href="./sitemap.xml" target="_blank">Sitemap</a></li>
+                            <li class="footer__links"><a class="link--text" href="https://github.com/wian-lloyd/callies-commissions/" target="_blank">Source code</a></li>
+                            <li class="footer__links"><a class="link--text" href="#" target="_blank">Terms & Conditions</a></li>
+                        </div>
+
+                        <div class="row tech">
+                            <li class="footer__links">
+                                <a class="link--icon link--icon--sass" href="https://sass-lang.com/" target="_blank"><i class="fab fa-sass"></i></a>
+                            </li>
+                            <li class="footer__links">
+                                <a class="link--icon link--icon--html" href="https://developer.mozilla.org/en-US/docs/Learn/HTML" target="_blank"><i class="fab fa-html5"></i></a>
+                            </i>
+                            </li>
+                            <li class="footer__links">
+                                <a class="link--icon link--icon--js" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><i class="fab fa-js"></i></a>
+                            </li>
+                            <li class="footer__links">
+                                <a class="link--icon link--icon--git" href="https://github.com/github" target="_blank"><i class="fab fa-github"></i></a>
+                            </li>
+                            <li class="footer__links">
+                                <a class="link--icon link--icon--gitkraken" href="https://www.gitkraken.com/" target="_blank"><i class="fab fa-gitkraken"></i></a>
+                            </li>
+                        </div>
                     </ul>
                 </div>
                 <div class="col span-1-of-2">
                     <ul class="footer__social-links">
                         <li class="footer__links">
-                            <a class="link--icon link--icon--twitter" href="https://twitter.com/callieearts" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
+                            <a class="link--icon link--icon--twitter" href="https://twitter.com/callieearts" target="_blank"><i class="fab fa-twitter"></i></a>
                         </li>
                         <li class="footer__links">
-                            <!-- FIXME: get an actual discord icon -->
-                            <a class="link--icon link--icon--discord" href="https://discord.gg/cx79Hds" target="_blank"><ion-icon name="logo-skype"></ion-icon></a>
+                            <a class="link--icon link--icon--discord" href="https://discord.gg/cx79Hds" target="_blank"><i class="fab fa-discord"></i></a>
                         </li>
                         <li class="footer__links">
-                            <a class="link--icon link--icon--twitch" href="https://www.twitch.tv/caatsucurry" target="_blank"><ion-icon name="logo-twitch"></ion-icon></a>
+                            <a class="link--icon link--icon--twitch" href="https://www.twitch.tv/caatsucurry" target="_blank"><i class="fab fa-twitch"></i></a>
                         </li>
                         <li class="footer__links">
-                            <a class="link--icon link--icon--instagram" href="https://www.instagram.com/coriwickk/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+                            <a class="link--icon link--icon--instagram" href="https://www.instagram.com/coriwickk/" target="_blank"><i class="fab fa-instagram"></i></a>
                         </li>
                         <li class="footer__links">
-                            <a class="link--icon link--icon--mail" href="mailto:callieebusiness@gmail.com"><ion-icon name="mail"></ion-icon></a>
+                            <a class="link--icon link--icon--mail" href="mailto:callieebusiness@gmail.com"><i class="far fa-envelope-open"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -269,14 +290,13 @@
                 </div>
                 <div class="row">
                     <p class="copyright__credits">
-                        Made with <ion-icon name="heart"></ion-icon> - <a class="copyright__credits--social-link" href="https://twitter.com/LloydWian" target="_blank"> Wian LLoyd</a>
+                        Made with <i class="fas fa-heart"></i> - <a class="copyright__credits--social-link" href="https://twitter.com/LloydWian" target="_blank"> Wian LLoyd</a>
                     </p>
                 </div>
             </div>
         </footer>
     </div>
 
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
     <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>

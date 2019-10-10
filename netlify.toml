@@ -1,0 +1,14 @@
+[build]
+  base = "project/" #TODO: add path
+  functions = "<path/to/your/folder>" #TODO: add path
+
+# 404 redirect rule
+[[redirects]] #FIXME: test this
+  from = "/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+  [redirects.headers]
+    X-From = "Netlify"
+    X-Api-Key = "some-api-key-string"

@@ -6,6 +6,7 @@
         0.1 colors
         0.2 fonts
         0.3 social colors
+        0.4 tech colors 
 
     1. global
         1.1 normalization
@@ -54,7 +55,7 @@
     $color-brand-instagram: #CD3081;
     $color-brand-reddit: #FF4500;
     $color-brand-linkedin: #0271AE;
-    $color-brand-github: #E94E32;
+    $color-brand-github: #24292E;
     $color-brand-facebook: #1774EB;
     $color-brand-spotify: #1AD15C;
     $color-brand-stackoverflow: #EC771F;
@@ -62,6 +63,14 @@
     $color-brand-mixer: #001F4E;
     $color-brand-steam: #0C1C49;
     $color-brand-deviantart: #05C645;
+
+    /* 0.4 tech colors */
+
+    $color-tech-sass: #CF649A;
+    $color-tech-html: #E34F26;
+    $color-tech-js: #FFDA07;
+    $color-tech-gitKraken: #179287;
+
 
     /* if you can't see these, they are compiled away by scss */
 
@@ -266,6 +275,9 @@
    /* 3.1 header */
 
     header {
+
+        /* 3.1.1 main nav */
+
         nav {
             .nav__logo {
                 height: 200px;
@@ -283,6 +295,10 @@
                     list-style: none;
                     display: inline-block;
                     margin-left: 40px;
+
+                    i {
+                        margin-left: 5px;
+                    }
 
                     .anchor {
                         &--main {
@@ -313,7 +329,7 @@
                     }
 
                     &:hover > .sub-nav {
-
+                        z-index: 99;
                         .sub-nav__item {
                             opacity: 1;
                             transform: translate(0, 10px);
@@ -321,6 +337,7 @@
                     } // by hovering a main-nav item, show the sub-nav
 
                     .sub-nav {
+                        z-index: -99;
                         position: absolute;
 
                         &__item {
@@ -335,6 +352,93 @@
                 }
             }
         }
+
+        /* 3.1.2 sticky nav */
+
+        // .sticky-nav { TODO: make a modifier for nav
+        //     background-color: $color-background-contrast;
+        //     height: 60px;
+        //     -webkit-box-shadow: 0px 7px 53px -12px rgba(0,0,0,0.75);
+        //     -moz-box-shadow: 0px 7px 53px -12px rgba(0,0,0,0.75);
+        //     box-shadow: 0px 7px 53px -12px rgba(0,0,0,0.75);
+
+        //     .nav__logo {
+        //         height: 40px;
+        //         width: auto;
+        //         float: left;
+        //         margin-top: 10px;
+        //     }
+
+        //     .main-nav {
+        //         float: right;
+        //         list-style: none;
+        //         margin-top: 20px;
+
+        //         &__item {
+        //             list-style: none;
+        //             display: inline-block;
+        //             margin-left: 40px;
+
+        //             i {
+        //                 margin-left: 5px;
+        //             }
+
+        //             .anchor {
+        //                 &--main {
+        //                     color: $color-background-dark;
+        //                     z-index: 99;
+        //                 }
+
+        //                 &--sub {
+        //                     color: $color-background-dark;
+        //                 }
+
+        //                 &:link,
+        //                 &:visited {
+        //                     padding: 13px 0;
+        //                     text-decoration: none;
+        //                     font-size: 90%;
+        //                     border-bottom: 3px solid transparent;
+        //                     transition: border-bottom 0.2s, color 0.2s;
+        //                 }
+
+        //                 &:hover {
+        //                     border-bottom: 3px solid $color-primary;
+        //                 }
+
+        //                 &:active {
+        //                     color: $color-secondary;
+        //                     border-bottom: 3px solid $color-secondary;
+        //                 }
+        //             }
+
+        //             &:hover > .sub-nav {
+        //                 z-index: 98;
+        //                 .sub-nav__item {
+        //                     opacity: 1;
+        //                     transform: translate(0, 10px);
+        //                 }
+        //             } // by hovering a main-nav item, show the sub-nav
+
+        //             .sub-nav {
+        //                 z-index: -99;
+        //                 position: absolute;
+        //                 background-color: $color-background-contrast;
+        //                 border-radius: 4%;
+        //                 padding: 0px 10px 20px 10px;
+
+        //                 &__item {
+        //                     transform: translate(0, -10px);
+        //                     opacity: 0;
+        //                     display: block;
+        //                     margin-left: -15px;
+        //                     padding: 12px 20px;
+        //                     transition: opacity 0.2s, transform 0.3s; 
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
 
         background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/../../../img/source.gif);
         background-size: cover;
@@ -396,11 +500,40 @@
             &__text-links {
                 font-size: 80%;
                 float: left;
-    
+
                 .link--text {
     
                     &:hover {
                         color: $color-background;
+                    }
+                }
+
+                .tech {
+                    margin-top: 5%;
+                    text-align: center;
+
+                    .link--icon {
+                        font-size: 150%;
+    
+                        &--sass:hover {
+                            color: $color-tech-sass;
+                        }
+    
+                        &--html:hover {
+                            color: $color-tech-html;
+                        }
+    
+                        &--js:hover {
+                            color: $color-tech-js;
+                        }
+
+                        &--git:hover {
+                            color: $color-brand-github;
+                        }
+
+                        &--gitkraken:hover {
+                            color: $color-tech-gitKraken;
+                        }
                     }
                 }
             }
