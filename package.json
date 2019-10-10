@@ -1,0 +1,22 @@
+{
+  "name": "callies-commissions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wian-lloyd/callies-commissions.git"
+  },
+  "author": "Wian LLoyd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wian-lloyd/callies-commissions/issues"
+  },
+  "homepage": "https://github.com/wian-lloyd/callies-commissions#readme",
+  "dependencies": {
+    "netlify-lambda": "^1.6.3"
+  }
+}
