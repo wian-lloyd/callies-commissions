@@ -54,7 +54,7 @@
     $color-brand-instagram: #CD3081;
     $color-brand-reddit: #FF4500;
     $color-brand-linkedin: #0271AE;
-    $color-brand-github: #E94E32;
+    $color-brand-github: #24292E;
     $color-brand-facebook: #1774EB;
     $color-brand-spotify: #1AD15C;
     $color-brand-stackoverflow: #EC771F;
@@ -283,6 +283,10 @@
                     list-style: none;
                     display: inline-block;
                     margin-left: 40px;
+
+                    i {
+                        margin-left: 5px;
+                    }
 
                     .anchor {
                         &--main {
