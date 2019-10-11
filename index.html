@@ -26,17 +26,6 @@
     <script src="https://kit.fontawesome.com/9bd1b197fc.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Chilanka|Montserrat:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
 
-    <!-- loader -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(window).on('load', () => {
-            setTimeout(() => {
-                $('#content').removeClass('hidden');
-                $('.loader').addClass('hidden');
-            }, 0);
-        });
-    </script>
-
     <title>Callie's Commissions</title>
 </head>
 <body>
@@ -46,40 +35,41 @@
 
     <div id="content" class="hidden">
         <header>
-            <nav>
+            <nav class="">
                 <div class="row">
                     <img src="/resources/img/logo.png" alt="logo" class="nav__logo">
+                    <img src="/resources/img/logo.png" alt="logo" class="nav__logo--sticky">
                     <ul class="main-nav">
                         <li class="main-nav__item">
-                            <a class="anchor anchor--main" href="#">About</a>
+                            <a class="anchor anchor--main js--about-button" href="#">About</a>
                         </li>
                         <li class="main-nav__item">
                             <a class="anchor anchor--main" href="#">Gallery<i class="fas fa-angle-down"></i></a>
                             <ul class="sub-nav">
-                                <li class="sub-nav__item"><a class="anchor anchor--sub" href="#showcase">Showcase</a></li>
-                                <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Progress</a></li>
+                                <li class="sub-nav__item js--showcase-button"><a class="anchor anchor--sub" href="#">Showcase</a></li>
+                                <!-- <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Progress</a></li> -->
                             </ul>
                         </li>
-                        <li class="main-nav__item">
+                        <!-- <li class="main-nav__item">
                             <a class="anchor anchor--main" href="#">Social<i class="fas fa-angle-down"></i></a>
                             <ul class="sub-nav">
                                 <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Discord</a></li>
                                 <li class="sub-nav__item"><a class="anchor anchor--sub" href="">Twitch</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li class="main-nav__item">
                             <a class="anchor anchor--main" href="#">Reviews<i class="fas fa-angle-down"></i></a>
                             <ul class="sub-nav">
-                                <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Amount</a></li>
-                                <li class="sub-nav__item"><a class="anchor anchor--sub" href="#reviews">Customer Reviews</a></li>
+                                <!-- <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Amount</a></li> -->
+                                <li class="sub-nav__item js--reviews-button"><a class="anchor anchor--sub" href="#">Customer Reviews</a></li>
                             </ul>
                         </li>
                         <li class="main-nav__item">
                             <a class="anchor anchor--main"href="#">Commissions<i class="fas fa-angle-down"></i></a>
                             <ul class="sub-nav">
-                                <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Options</a></li>
-                                <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Order</a></li>
-                                <li class="sub-nav__item"><a class="anchor anchor--sub" href="#terms">Terms of Service</a></li>
+                                <!-- <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Options</a></li>
+                                <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Order</a></li> -->
+                                <li class="sub-nav__item js--tos-button"><a class="anchor anchor--sub" href="#">Terms of Service</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -91,12 +81,30 @@
                     <br>
                     Hello amazing Callie art! 
                 </h1>
-                <a class="btn btn--full" href="#">I want a commission!</a>
-                <a class="btn btn--outline" href="#">Show me more</a>
+                <a class="btn btn--full js--tos-button" href="#">I want a commission!</a>
+                <a class="btn btn--outline js--about-button" href="#">Show me more</a>
             </div>
         </header>
     
-        <main>
+        <main id="js--page-content">
+
+            <section class="section-about" id="about">
+                <div class="row">
+                    <h2>About Me</h2>
+                    <p class="long-copy">
+                        Hello, My name's Callie and I'm an Asian self taught digital artist! 
+                        <br>
+                        <br>
+                        I speak a little bit of Cantonese as well as English.
+                        <br>
+                        <br>
+                        I've been drawing for a little over 5 years and only started drawing seriously a year ago. 
+                        <br>
+                        <br>
+                        I love drawing cute anime girls and getting that bread!
+                    </p>
+                </div>
+            </section>
 
             <section class="section-showcase" id="showcase">
                 <ul class="showcase">
@@ -283,9 +291,8 @@
             </div>
             <div class="copyright">
                 <div class="row">
-                    <p class="copyright__text">
-                        <!-- TODO: make date dynamic -->
-                        Copyright &copy; 2019 by Callie. All rights reserved.
+                    <p class="copyright__text" id="date-replace">
+                        Copyright &copy; DynamicDataYear by Callie. All rights reserved.
                     </p>
                 </div>
                 <div class="row">
@@ -297,6 +304,7 @@
         </footer>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
     <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
