@@ -40,22 +40,41 @@ $(document).ready(function () {
         },500);
     }); 
 
-    /* sticky header */
+    $(".back-to-top").click(function(){
+        $('html, body').animate({
+            scrollTop: ($('#content').offset().top)
+        },500);
+    }); 
+
+    /* waypoint triggers */
     $('#js--page-content').waypoint(function(direction) {
         if (direction === 'down') {
             $('nav').addClass('sticky-nav');
             $('nav').addClass('animation--slide-in');
+            $('.back-to-top').removeClass('hidden');
+            $('.back-to-top').addClass('animation--slide-in--right');
 
             setTimeout(() => {
                 $('nav').removeClass('animation--slide-in');
-            }, 100);
+            }, 100); // remove the animation class so it doesn't keep repeating
+
+            setTimeout(() => {
+                $('.back-to-top').removeClass('animation--slide-in--right');
+            }, 280); // remove the animation class so it doesn't keep repeating
+
         }else {
             $('nav').addClass('animation--slide-out');
+            $('.back-to-top').addClass('animation--slide-out--right');
 
             setTimeout(() => {
                 $('nav').removeClass('animation--slide-out');
                 $('nav').removeClass('sticky-nav');
-            }, 90);
+            }, 90); // remove the animation class so it doesn't keep repeating
+            
+            setTimeout(() => {
+                $('.back-to-top').removeClass('animation--slide-out--right');
+                $('.back-to-top').addClass('hidden');
+            }, 280); // remove the animation class so it doesn't keep repeating
         }
     }, {
         offset: '70px'
