@@ -34,6 +34,7 @@
         showcase
         reviews
         commission terms of service
+        forms
 
 //////////////////// */
 
@@ -43,13 +44,29 @@
 
     /* 0.1 colors */
 
+    // :root {  
+    //     --main-color: #FFFFFF;
+    //     --main-color-offset: #f4f4f4;
+    //     --font1: #FFFFFF;
+    //     --font2: #555;
+    // } // these are dynamically accessible 
+
+    // $color-background: var(--main-color);
+    // $color-background-contrast: var(--main-color-offset);
+    // $color-font: var(--font-color);
+
+    // $text1: var(--font1); // light text
+    // $text2: var(--font2); // dark text
+
     $color-primary: #EA9999; // light salmon pink
     $color-primary-hover: #E47D7D;
     $color-secondary: #D4E09B; // medium spring bud
+
     $color-background: #FFFFFF;
     $color-background-contrast: #f4f4f4;
-    $color-background-dark: #333333;
     $color-font: #555;
+
+    $color-background-dark: #333333;
 
     /* 0.2 fonts */
 
@@ -541,12 +558,12 @@
 
                     .anchor {
                         &--main {
-                            color: $color-background-dark;
+                            color: $color-font;
                             z-index: 99;
                         }
 
                         &--sub {
-                            color: $color-background-dark;
+                            color: $color-font;
                         }
 
                         &:link,
@@ -723,6 +740,11 @@
 
     .back-to-top {
         background-color: $color-primary;
+        transition: background-color 0.2s;
+
+        -webkit-box-shadow: 2px 2px 28px 0px rgba($color-font, 0.4);
+        -moz-box-shadow: 2px 2px 28px 0px rgba($color-font, 0.4);
+        box-shadow: 2px 2px 28px 0px rgba($color-font, 0.4);
 
         position: fixed;
         z-index: 999;
@@ -742,7 +764,14 @@
             font-size: 40px;
         }
 
+        &:hover{
+            background-color: $color-primary-hover;
+            cursor: pointer;
+        }
 
+        &:active {
+            background-color: $color-secondary;
+        }
     }
 
     /* about */
@@ -868,5 +897,13 @@
             margin: 15px 0px;
             font-size: 80%;
         }
+
+    }
+
+    /* form */
+    // TODO: reconfigure to use BEM
+    .section-form {
+        background-color: $color-background-contrast;
+
 
     }

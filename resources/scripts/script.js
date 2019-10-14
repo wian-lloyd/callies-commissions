@@ -1,5 +1,12 @@
 $(document).ready(function () {
 
+    // let root = document.documentElement;
+    // $(".js--dark").click(function(){
+    //     root.style.setProperty('--main-color', '#444');
+    //     root.style.setProperty('--main-color-offset', '#555');
+    //     root.style.setProperty('--font-color', '#fff');
+    // });
+
     /* parralax images */
     $('.header-img-parallax').parallax({imageSrc: 'resources/img/source.gif'});
     $('.reviews-img-parallax').parallax({imageSrc: 'resources/img/original.gif'});
