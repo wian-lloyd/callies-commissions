@@ -1,4 +1,8 @@
 $(document).ready(function () {
+
+    /* parralax images */
+    $('.header-img-parallax').parallax({imageSrc: 'resources/img/source.gif'});
+    $('.reviews-img-parallax').parallax({imageSrc: 'resources/img/original.gif'});
     
     /* loader */
     $('#content').removeClass('hidden');
