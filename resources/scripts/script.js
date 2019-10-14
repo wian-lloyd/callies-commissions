@@ -1,4 +1,8 @@
 $(document).ready(function () {
+
+    /* parralax images */
+    $('.header-img-parallax').parallax({imageSrc: 'resources/img/source.gif'});
+    $('.reviews-img-parallax').parallax({imageSrc: 'resources/img/original.gif'});
     
     /* loader */
     $('#content').removeClass('hidden');
@@ -44,14 +48,14 @@ $(document).ready(function () {
 
             setTimeout(() => {
                 $('nav').removeClass('animation--slide-in');
-            }, 150);
+            }, 100);
         }else {
             $('nav').addClass('animation--slide-out');
 
             setTimeout(() => {
                 $('nav').removeClass('animation--slide-out');
                 $('nav').removeClass('sticky-nav');
-            }, 150);
+            }, 90);
         }
     }, {
         offset: '70px'

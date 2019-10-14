@@ -208,51 +208,51 @@
 
     .animation {
         &--slide-in {
-            -webkit-animation: slide-in 0.2s ease-in-out; /* Safari 4+ */
-            -moz-animation:    slide-in 0.2s ease-in-out; /* Fx 5+ */
-            -o-animation:      slide-in 0.2s ease-in-out; /* Opera 12+ */
-            animation:         slide-in 0.2s ease-in-out; /* IE 10+, Fx 29+ */
+            -webkit-animation: slide-in 0.1s ease-in-out; /* Safari 4+ */
+            -moz-animation:    slide-in 0.1s ease-in-out; /* Fx 5+ */
+            -o-animation:      slide-in 0.1s ease-in-out; /* Opera 12+ */
+            animation:         slide-in 0.1s ease-in-out; /* IE 10+, Fx 29+ */
         }
         &--slide-out {
-            -webkit-animation: slide-out 0.2s ease-in-out; /* Safari 4+ */
-            -moz-animation:    slide-out 0.2s ease-in-out; /* Fx 5+ */
-            -o-animation:      slide-out 0.2s ease-in-out; /* Opera 12+ */
-            animation:         slide-out 0.2s ease-in-out; /* IE 10+, Fx 29+ */
+            -webkit-animation: slide-out 0.1s ease-in-out; /* Safari 4+ */
+            -moz-animation:    slide-out 0.1s ease-in-out; /* Fx 5+ */
+            -o-animation:      slide-out 0.1s ease-in-out; /* Opera 12+ */
+            animation:         slide-out 0.1s ease-in-out; /* IE 10+, Fx 29+ */
         }
     }
 
     @-webkit-keyframes slide-in {
-        0%   { margin-top: -60px; }
-        100% { margin-top: 0px; }
+        0%   { transform: translate(0px, -60px);}
+        100% { transform: translate(0px, 0px);}
     }
     @-moz-keyframes slide-in {
-        0%   { margin-top: -60px; }
-        100% { margin-top: 0px; }
+        0%   { transform: translate(0px, -60px);}
+        100% { transform: translate(0px, 0px);}
     }
     @-o-keyframes slide-in {
-        0%   { margin-top: -60px; }
-        100% { margin-top: 0px; }
+        0%   { transform: translate(0px, -60px);}
+        100% { transform: translate(0px, 0px);}
     }
     @keyframes slide-in {
-        0%   { margin-top: -60px; }
-        100% { margin-top: 0px; }
+        0%   { transform: translate(0px, -60px);}
+        100% { transform: translate(0px, 0px);}
     }
 
     @-webkit-keyframes slide-out {
-        0%   { margin-top: 0px; }
-        100% { margin-top: -60px; }
+        0%   { transform: translate(0px, 0px);}
+        100% { transform: translate(0px, -60px);}
     }
     @-moz-keyframes slide-out {
-        0%   { margin-top: 0px; }
-        100% { margin-top: -60px; }
+        0%   { transform: translate(0px, 0px);}
+        100% { transform: translate(0px, -60px);}
     }
     @-o-keyframes slide-out {
-        0%   { margin-top: 0px; }
-        100% { margin-top: -60px; }
+        0%   { transform: translate(0px, 0px);}
+        100% { transform: translate(0px, -60px);}
     }
     @keyframes slide-out {
-        0%   { margin-top: 0px; }
-        100% { margin-top: -60px; }
+        0%   { transform: translate(0px, 0px);}
+        100% { transform: translate(0px, -60px);}
     }
 
 /* ====================
@@ -428,12 +428,12 @@
             position: fixed;
             width: 100%;
             z-index: 50;
-            background-color: $color-background-contrast;
+            background-color: $color-background;
             height: 60px;
-            
-            -webkit-box-shadow: 0px 7px 53px -12px rgba(0,0,0,0.75);
-            -moz-box-shadow: 0px 7px 53px -12px rgba(0,0,0,0.75);
-            box-shadow: 0px 7px 53px -12px rgba(0,0,0,0.75);
+
+            -webkit-box-shadow: 0px 7px 53px -12px rgba($color-font ,0.75);
+            -moz-box-shadow: 0px 7px 53px -12px rgba($color-font ,0.75);
+            box-shadow: 0px 7px 53px -12px rgba($color-font ,0.75);
 
             .nav__logo {
                 display: none;
@@ -481,7 +481,7 @@
             }
         }
 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/../../../img/source.gif);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -681,7 +681,7 @@
 
     /* reviews */
     .section-reviews {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/../../../img/original.gif);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
         background-size: cover;
         color: $color-background;
         background-attachment: fixed;
