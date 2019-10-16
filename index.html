@@ -35,7 +35,7 @@
 
     <div id="content" class="hidden">
         <header class="header-img-parallax">
-            <nav class="">
+            <nav>
                 <div class="row">
                     <img src="/resources/img/logo.png" alt="logo" class="nav__logo">
                     <img src="/resources/img/logo.png" alt="logo" class="nav__logo--sticky">
@@ -67,11 +67,15 @@
                         <li class="main-nav__item">
                             <a class="anchor anchor--main"href="#">Commissions<i class="fas fa-angle-down"></i></a>
                             <ul class="sub-nav">
-                                <!-- <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Options</a></li>
-                                <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Order</a></li> -->
+                                <!-- <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Options</a></li> -->
+                                <li class="sub-nav__item"><a class="anchor anchor--sub" href="#form">Order</a></li>
                                 <li class="sub-nav__item"><a class="anchor anchor--sub" href="#terms">Terms of Service</a></li>
                             </ul>
                         </li>
+                        <label class="switch js--switch-lights tooltip tooltip--bottom" data-tooltip="Enable/Disable dark mode.">
+                            <input type="checkbox">
+                            <span class="slider slider--round"></span>
+                        </label>
                     </ul>
                 </div>
             </nav>
@@ -87,7 +91,7 @@
         </header>
     
         <main id="js--page-content">
-            <div class="back-to-top hidden">
+            <div class="back-to-top tooltip tooltip--left hidden" data-tooltip="Back to the top of the page, please.">
                 <i class="fas fa-angle-up back-to-top_icon animation--bounce"></i>
             </div>
 
@@ -203,7 +207,7 @@
                 </div>   
             </section>
 
-            <section class="section-form js--section-form" id="form">
+            <!-- <section class="section-form js--section-form" id="form">
                 <div class="row">
                     <h2>Build Your Commission Here!</h2>
                 </div>
@@ -212,7 +216,7 @@
 
                     </form>
                 </div>
-            </section>
+            </section> -->
 
             <section class="section-reviews reviews-img-parallax" id="reviews">
                 <div class="row">

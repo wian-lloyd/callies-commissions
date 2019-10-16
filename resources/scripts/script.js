@@ -1,11 +1,27 @@
 $(document).ready(function () {
 
-    // let root = document.documentElement;
-    // $(".js--dark").click(function(){
-    //     root.style.setProperty('--main-color', '#444');
-    //     root.style.setProperty('--main-color-offset', '#555');
-    //     root.style.setProperty('--font-color', '#fff');
-    // });
+    sessionStorage.setItem('lights', 'true');
+    let root = document.documentElement;
+
+    $(".js--switch-lights").mouseup(function() {
+        let lights = sessionStorage.getItem('lights');
+
+        if ( lights === 'true' ) {
+            root.style.setProperty('--js-main', '#333');
+            root.style.setProperty('--js-main-offset', '#373737');
+            root.style.setProperty('--js-font', '#555');
+            root.style.setProperty('--js-font-contrast', '#FFFFFF');
+
+            sessionStorage.setItem('lights', 'false')
+        }else {
+            root.style.setProperty('--js-main', '#FFFFFF');
+            root.style.setProperty('--js-main-offset', '#f4f4f4');
+            root.style.setProperty('--js-font', '#FFFFFF');
+            root.style.setProperty('--js-font-contrast', '#555');
+            
+            sessionStorage.setItem('lights', 'true')
+        }
+    });
 
     /* parralax images */
     $('.header-img-parallax').parallax({imageSrc: 'resources/img/source.gif'});

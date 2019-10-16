@@ -24,6 +24,8 @@
     2. components
         2.1 buttons
         2.2 sections
+        2.3 toggle-switches
+        2.4 tooltips
 
     3. sections
         3.0 loader
@@ -32,6 +34,7 @@
             3.1.2 sticky nav
         3.2 footer
         showcase
+        about
         reviews
         commission terms of service
         forms
@@ -45,25 +48,18 @@
     /* 0.1 colors */
 
     :root { // light
-        --main-color: #FFFFFF;
-        --main-color-offset: #f4f4f4;
-        --font1: #FFFFFF;
-        --font2: #555;
+        --js-main: #FFFFFF;
+        --js-main-offset: #f4f4f4;
+        --js-font: #FFFFFF;
+        --js-font-contrast: #555;
     } // these are dynamically accessible 
 
-    // :root { // dark
-    //     --main-color: #333;
-    //     --main-color-offset: #373737;
-    //     --font1: #555;
-    //     --font2: #FFFFFF;
-    // } // these are dynamically accessible 
+    $color-background: var(--js-main);
+    $color-background-contrast: var(--js-main-offset);
 
-    $color-background: var(--main-color);
-    $color-background-contrast: var(--main-color-offset);
-
-    $text-lightDark: var(--font1); // light to dark text
-    $text-darkLight: var(--font2); // dark to light text
-    $text-lightStatic: #FFFFFF; // unchanging light text
+    $text-main: var(--js-font); // light to dark text
+    $text-main-contrast: var(--js-font-contrast); // dark to light text
+    $text-main-contrast-static: #FFFFFF; // unchanging light text
 
     $color-primary: #EA9999; // light salmon pink
     $color-primary-hover: #E47D7D;
@@ -117,7 +113,7 @@
 
     html {
         background-color: $color-background;
-        color: $text-darkLight;
+        color: $text-main-contrast;
         font-family: $font-primary;
         font-weight: 300;
         font-size: 20px;
@@ -384,7 +380,7 @@
         &--full:visited {
             background-color: $color-primary;
             border: 1px solid $color-primary;
-            color: $text-lightStatic;
+            color: $text-main-contrast-static;
             margin-right: 15px;
     
             &:hover {
@@ -406,13 +402,13 @@
             &:hover {
                 background-color: $color-primary-hover;
                 border: 1px solid $color-primary-hover;
-                color: $text-lightStatic;
+                color: $text-main-contrast-static;
             }
     
             &:active {
                 background-color: $color-secondary;
                 border: 1px solid $color-secondary;
-                color: $text-lightStatic;
+                color: $text-main-contrast-static;
             }
         }
     }
@@ -421,6 +417,159 @@
 
     section {
         padding: 80px 0;
+    }
+
+    /* 2.3 toggle-switches */
+
+    .switch {
+        position: absolute;
+        right: 5%;
+        display: block;
+        width: 50px;
+        height: 30px;
+
+        input {
+            display: none;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: $color-background;
+            transition: 0.5s;
+            border: 2px solid #555;
+
+            &::before {
+                position: absolute;
+                content: '';
+                bottom: 10px;
+                background-color: #555;
+                transition: 0.5s;
+            }
+
+            &--round {
+                border-radius: 35px;
+
+                &::before {
+                    width: 43%;
+                    height: 45%;
+                    border-top-left-radius: 50px;
+                    border-top-right-radius: 50px;
+                    transform: rotateZ(-45deg);
+                }
+            }
+        }
+
+        input:checked + .slider {
+            background-color: $color-background-dark;
+
+            &::before {
+                transform: translateX(25px) rotateZ(45deg);
+                background: $color-primary;
+            }
+        }
+    }
+
+    /* 2.4 tooltips */
+
+    .tooltip {
+
+        &::before,
+        &::after {
+            pointer-events: none;
+            visibility: hidden;
+            opacity: 0;
+            transition: transform 0.2s, opacity 0.1s, visibility 0.2s;
+            position: absolute;
+        }
+
+        &::before {
+            text-align: center;
+            z-index: 2;
+            width: 100px;
+            padding: 10px;
+
+            font-size: 12px;
+            font-family: $font-secondary;
+
+            line-height: 1.4em;
+            border-radius: 5px;
+            background-color: rgba(#555, 0.7);
+            color: $text-main-contrast-static;
+            content: attr(data-tooltip);
+        }
+
+        &::after {
+            z-index: 1;
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            content: '';
+        }
+
+        &:hover {
+            &::before, &::after {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &--bottom {
+
+            &:hover {
+                &::before,
+                &::after {
+                    transform: translate(-50%, 0px);
+                }
+            }
+
+            &::before,
+            &::after {
+                left: 50%;
+                transform: translate(-50%, 50px);
+                margin-top: 15px;
+            }
+
+            &::before {
+                top: calc(100% + 5px);
+            }
+
+            &::after {
+                top: 100%;
+                border-bottom-color: rgba(#555, 0.7);
+                border-top-width: 0;
+            }
+        }
+
+        &--left {
+
+            &:hover {
+                &::before,
+                &::after {
+                    transform: translate(0px, -50%);
+                }
+            }
+
+            &::before,
+            &::after {
+                top: 50%;
+                transform: translate(-50px, -50%);
+                margin-right: 15px;
+            }
+
+            &::before {
+                right: calc(100% + 5px);
+            }
+
+            &::after {
+                right: 100%;
+                border-left-color: rgba(#555, 0.7);
+                border-right-width: 0;
+            }
+
+        }
+
     }
 
 /* ====================
@@ -465,6 +614,10 @@
                 list-style: none;
                 margin-top: 55px;
 
+                .switch {
+                    top: 5%;
+                }
+
                 &__item {
                     list-style: none;
                     display: inline-block;
@@ -476,11 +629,11 @@
 
                     .anchor {
                         &--main {
-                            color: $text-lightStatic;
+                            color: $text-main-contrast-static;
                         }
 
                         &--sub {
-                            color: $text-lightStatic;
+                            color: $text-main-contrast-static;
                         }
 
                         &:link,
@@ -539,9 +692,9 @@
             background-color: $color-background;
             height: 60px;
 
-            -webkit-box-shadow: 0px 7px 53px -12px rgba($text-darkLight, 0.75);
-            -moz-box-shadow: 0px 7px 53px -12px rgba($text-darkLight, 0.75);
-            box-shadow: 0px 7px 53px -12px rgba($text-darkLight, 0.75);
+            -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+            -moz-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+            box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
 
             // FIXME: gradients are broken
             // -webkit-box-shadow: 0px 7px 53px -12px rgba($color-font ,0.75);
@@ -561,16 +714,20 @@
             .main-nav {
                 margin-top: 20px;
 
+                .switch {
+                    top: 25%;
+                }
+
                 &__item {
 
                     .anchor {
                         &--main {
-                            color: $text-darkLight;
+                            color: $text-main-contrast;
                             z-index: 99;
                         }
 
                         &--sub {
-                            color: $text-darkLight;
+                            color: $text-main-contrast;
                         }
 
                         &:link,
@@ -589,6 +746,10 @@
                         border-radius: 0% 0% 4% 4%;
                         margin: 16px 0px 0px -25px;
                         padding: 0px 10px 20px 10px;
+
+                        -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+                        -moz-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+                        box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
                     }
                 }
             }
@@ -612,7 +773,7 @@
             &__main-text {
                 margin-top: 0;
                 margin-bottom: 20px;
-                color: $text-lightStatic;
+                color: $text-main-contrast-static;
                 font-size: 240%;
                 font-weight: 100;
                 font-family: $font-secondary;
@@ -644,7 +805,7 @@
                 .link {
                     &--text,
                     &--icon {
-                        color: $text-darkLight;
+                        color: $text-main-contrast;
                         text-decoration: none;
                         transition: color 0.2s;
                     }
@@ -658,7 +819,7 @@
                 .link--text {
     
                     &:hover {
-                        color: $text-lightDark;
+                        color: $text-main;
                     }
                 }
 
@@ -733,7 +894,7 @@
                 font-family: $font-secondary;
 
                 &--social-link {
-                    color: $text-darkLight;
+                    color: $text-main-contrast;
                     text-decoration: none; 
                     transition: color 0.2s;
 
@@ -749,9 +910,9 @@
         background-color: $color-primary;
         transition: background-color 0.2s;
 
-        -webkit-box-shadow: 2px 2px 28px 0px rgba($text-darkLight, 0.4);
-        -moz-box-shadow: 2px 2px 28px 0px rgba($text-darkLight, 0.4);
-        box-shadow: 2px 2px 28px 0px rgba($text-darkLight, 0.4);
+        -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+        -moz-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+        box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
 
         // FIXME: gradients are broken
         // -webkit-box-shadow: 2px 2px 28px 0px rgba($color-font, 0.4);
@@ -772,7 +933,7 @@
         align-items: center;
 
         &_icon {
-            color: $text-lightDark;
+            color: $text-main;
             font-size: 40px;
         }
 
@@ -788,6 +949,7 @@
 
     /* about */
     .section-about {
+        height: 60vh;
         background-color: $color-background;
         background-image: url(img/../../../img/about-bg.png);
         background-repeat: no-repeat;
@@ -837,7 +999,7 @@
     .section-reviews {
         background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
         background-size: cover;
-        color: $text-lightStatic;
+        color: $text-main-contrast-static;
         background-attachment: fixed;
 
         blockquote {
