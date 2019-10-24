@@ -96,7 +96,6 @@
     $color-tech-js: #FFDA07;
     $color-tech-gitKraken: #179287;
 
-
     /* if you can't see these, they are compiled away by scss */
 
 /* ====================
@@ -147,7 +146,6 @@
     /* 1.2 typography */
 
         /* 1.2.1 headers */
-
         h1,
         h2,
         h3 {
@@ -187,7 +185,6 @@
         } // accent after section headers
 
         /* 1.2.2 paragraphs */
-
         .long-copy {
             line-height: 145%;
             width: 70%;
@@ -200,12 +197,12 @@
         }
 
         /* 1.2.3 icons */
-
         .icon {
+            color: $color-primary;
+
             &--big {
                 font-size: 350%;
                 display: block;
-                color: $color-primary;
                 margin-bottom: 10px;
             }
             
@@ -213,7 +210,6 @@
                 display: inline-block;
                 width: 30px;
                 text-align: center;
-                color: $color-primary;
                 font-size: 120%;
                 margin-right: 10px;
                 
@@ -228,30 +224,32 @@
 
     .animation {
         &--slide-in {
+            
+            -webkit-animation: slide-in 0.1s ease-in-out; /* Safari 4+ */
+            -moz-animation:    slide-in 0.1s ease-in-out; /* Fx 5+ */
+            -o-animation:      slide-in 0.1s ease-in-out; /* Opera 12+ */
+            animation:         slide-in 0.1s ease-in-out; /* IE 10+, Fx 29+ */
+
             &--right {
                 -webkit-animation: slide-in-right 0.3s ease-in-out; /* Safari 4+ */
                 -moz-animation:    slide-in-right 0.3s ease-in-out; /* Fx 5+ */
                 -o-animation:      slide-in-right 0.3s ease-in-out; /* Opera 12+ */
                 animation:         slide-in-right 0.3s ease-in-out; /* IE 10+, Fx 29+ */
             }
-
-            -webkit-animation: slide-in 0.1s ease-in-out; /* Safari 4+ */
-            -moz-animation:    slide-in 0.1s ease-in-out; /* Fx 5+ */
-            -o-animation:      slide-in 0.1s ease-in-out; /* Opera 12+ */
-            animation:         slide-in 0.1s ease-in-out; /* IE 10+, Fx 29+ */
         }
         &--slide-out {
+            
+            -webkit-animation: slide-out 0.1s ease-in-out; /* Safari 4+ */
+            -moz-animation:    slide-out 0.1s ease-in-out; /* Fx 5+ */
+            -o-animation:      slide-out 0.1s ease-in-out; /* Opera 12+ */
+            animation:         slide-out 0.1s ease-in-out; /* IE 10+, Fx 29+ */
+            
             &--right {
                 -webkit-animation: slide-out-right 0.3s ease-in-out; /* Safari 4+ */
                 -moz-animation:    slide-out-right 0.3s ease-in-out; /* Fx 5+ */
                 -o-animation:      slide-out-right 0.3s ease-in-out; /* Opera 12+ */
                 animation:         slide-out-right 0.3s ease-in-out; /* IE 10+, Fx 29+ */
             }
-
-            -webkit-animation: slide-out 0.1s ease-in-out; /* Safari 4+ */
-            -moz-animation:    slide-out 0.1s ease-in-out; /* Fx 5+ */
-            -o-animation:      slide-out 0.1s ease-in-out; /* Opera 12+ */
-            animation:         slide-out 0.1s ease-in-out; /* IE 10+, Fx 29+ */
         }
         &--bounce {
             -webkit-animation: bounce 1s ease-in-out infinite; /* Safari 4+ */
@@ -365,7 +363,7 @@
 
    /* 2.1 buttons */
    
-    .btn {
+    .btn { // TODO: add disabled button styles
         &:link,
         &:visited {
             display: inline-block;
@@ -435,7 +433,10 @@
         .slider {
             position: absolute;
             cursor: pointer;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0; 
+            left: 0; 
+            right: 0;
+            bottom: 0;
             background: $color-background;
             transition: 0.5s;
             border: 2px solid #555;
@@ -489,10 +490,8 @@
             z-index: 2;
             width: 100px;
             padding: 10px;
-
             font-size: 12px;
             font-family: $font-secondary;
-
             line-height: 1.4em;
             border-radius: 5px;
             background-color: rgba(#555, 0.7);
@@ -595,9 +594,14 @@
 
     header {
 
-        /* 3.1.1 main nav */
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
 
-        nav {
+        /* 3.1.1 main nav */
+        nav { // non-sticky nav
             .nav__logo {
                 height: 200px;
                 width: auto;
@@ -684,7 +688,6 @@
         }
 
         /* 3.1.2 sticky nav */
-
         .sticky-nav {
             position: fixed;
             width: 100%;
@@ -695,11 +698,6 @@
             -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
             -moz-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
             box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
-
-            // FIXME: gradients are broken
-            // -webkit-box-shadow: 0px 7px 53px -12px rgba($color-font ,0.75);
-            // -moz-box-shadow: 0px 7px 53px -12px rgba($color-font ,0.75);
-            // box-shadow: 0px 7px 53px -12px rgba($color-font ,0.75);
 
             .nav__logo {
                 display: none;
@@ -755,12 +753,6 @@
             }
         }
 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        height: 100vh;
-
         .hero {
             &__text-box {
                 position: absolute;
@@ -786,7 +778,7 @@
 
    /* 3.2 footer */
 
-   footer {
+    footer {
         background-color: $color-background-dark;
         padding: 60px 0 100px 0;
 
@@ -904,33 +896,24 @@
                 }
             }
         }
-   }
+    }
 
     .back-to-top {
         background-color: $color-primary;
         transition: background-color 0.2s;
-
-        -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
-        -moz-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
-        box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
-
-        // FIXME: gradients are broken
-        // -webkit-box-shadow: 2px 2px 28px 0px rgba($color-font, 0.4);
-        // -moz-box-shadow: 2px 2px 28px 0px rgba($color-font, 0.4);
-        // box-shadow: 2px 2px 28px 0px rgba($color-font, 0.4);
-
         position: fixed;
-        z-index: 999;
+        z-index: 90;
         bottom: 3%;
         right: 2%;
-
         height: 50px;
         width: 50px;
         border-radius: 50%;
-
         display: flex;
         justify-content: center;
         align-items: center;
+        -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+        -moz-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+        box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
 
         &_icon {
             color: $text-main;
@@ -949,7 +932,6 @@
 
     /* about */
     .section-about {
-        height: 60vh;
         background-color: $color-background;
         background-image: url(img/../../../img/about-bg.png);
         background-repeat: no-repeat;
@@ -994,7 +976,6 @@
         }
    }
 
-
     /* reviews */
     .section-reviews {
         background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
@@ -1011,7 +992,7 @@
             font-size: 80%;
 
             &:before {
-                content: "\201C";
+                content: "\201C"; // quotation symbole
                 font-size: 500%;
                 display: block;
                 position: absolute;
