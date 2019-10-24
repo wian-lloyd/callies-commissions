@@ -1,35 +1,48 @@
 $(document).ready(function () {
-
-    sessionStorage.setItem('lights', 'true');
     let root = document.documentElement;
 
+    $(window).on("load", function() {
+        /* loader */
+        alert("Please note that this website is not yet finalized.")
+        $('#content').removeClass('hidden');
+        $('.loader').addClass('hidden');
+    });
+
+    /* loader */
+    // $('#content').removeClass('hidden');
+    // $('.loader').addClass('hidden');
+    
+    if ( localStorage.getItem('lights') === 'false' ) {
+        root.style.setProperty('--js-main', '#333');
+        root.style.setProperty('--js-main-offset', '#373737');
+        root.style.setProperty('--js-font', '#555');
+        root.style.setProperty('--js-font-contrast', '#FFFFFF');
+        localStorage.setItem('lights', 'false');
+
+        $(".js--switch-lights input[type='checkbox']").prop('checked', true);
+    }
+
     $(".js--switch-lights").mouseup(function() {
-        let lights = sessionStorage.getItem('lights');
+        let lights = localStorage.getItem('lights');
 
         if ( lights === 'true' ) {
             root.style.setProperty('--js-main', '#333');
             root.style.setProperty('--js-main-offset', '#373737');
             root.style.setProperty('--js-font', '#555');
             root.style.setProperty('--js-font-contrast', '#FFFFFF');
-
-            sessionStorage.setItem('lights', 'false')
+            localStorage.setItem('lights', 'false');
         }else {
             root.style.setProperty('--js-main', '#FFFFFF');
             root.style.setProperty('--js-main-offset', '#f4f4f4');
             root.style.setProperty('--js-font', '#FFFFFF');
             root.style.setProperty('--js-font-contrast', '#555');
-            
-            sessionStorage.setItem('lights', 'true')
+            localStorage.setItem('lights', 'true');
         }
     });
 
     /* parralax images */
     $('.header-img-parallax').parallax({imageSrc: 'resources/img/source.gif'});
     $('.reviews-img-parallax').parallax({imageSrc: 'resources/img/original.gif'});
-    
-    /* loader */
-    $('#content').removeClass('hidden');
-    $('.loader').addClass('hidden');
 
     /* dynamic date */
     var date = new Date().getFullYear();
