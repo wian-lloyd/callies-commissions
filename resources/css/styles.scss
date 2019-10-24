@@ -1062,3 +1062,102 @@
 
 
     }
+
+    .modal {
+        background-color: $color-background-contrast;
+        position: fixed;
+        z-index: 999;
+        width: 45%;
+        border-radius: 10px;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &__close-btn {
+            position: absolute;
+            right: 5%;
+            top: 5%;
+        }
+
+        &__close-btn:link,
+        &__close-btn:visited {
+            transition: color 0.2s;
+            color: $color-primary;
+
+            &:hover {
+                color: $color-primary-hover;
+            }
+    
+            &:active {
+                color: $color-secondary;
+            }
+        }
+
+        &__header {
+            padding-top: 5%;
+        }
+
+        &__body {
+            background-image: url(img/../../../img/about-bg.png);
+            background-repeat: no-repeat;
+            background-position: bottom;
+            text-align: center;  
+            padding-bottom: 7%;
+        }
+
+        &__bug-btn {
+
+            &:link,
+            &:visited {
+                transition: color 0.2s;
+                color: $color-background;
+
+                i {
+                    transition: text-shadow 0.2s;
+                    transform: rotate(25deg);
+                }
+
+                &:hover > i {
+                    -webkit-text-shadow: 3px 3px 3px $text-main-contrast;
+                    -moz-text-shadow: 3px 3px 3px $text-main-contrast;
+                    text-shadow: 3px 3px 3px $text-main-contrast;
+                }
+        
+                &:active {
+                    color: $color-secondary;
+                }
+            }
+
+            text-align: center;
+            font-size: 300%;
+            position: absolute;
+
+            bottom: -5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &__footer {
+            
+            background-color: $color-primary;
+            padding-bottom: 10%;
+            width: 100%;
+            border-radius: 0px 0px 10px 10px;
+
+            &::before {
+                display: block;
+                height: 3px;
+                background-color: $color-primary;
+                content: " ";
+                width: 100%;
+                margin: 0 0;
+            } // accent before modal footer
+        }
+    }
+
+    
+.stop-scrolling { // disable scrolling
+    height: 100%; 
+    overflow: hidden; 
+} 

@@ -3,15 +3,19 @@ $(document).ready(function () {
 
     $(window).on("load", function() {
         /* loader */
-        alert("Please note that this website is not yet finalized.")
-        $('#content').removeClass('hidden');
-        $('.loader').addClass('hidden');
+        // alert("Please note that this website is not yet finalized.")
+        // $('#content').removeClass('hidden');
+        // $('.loader').addClass('hidden');
     });
 
     /* loader */
-    // $('#content').removeClass('hidden');
-    // $('.loader').addClass('hidden');
+    $('#content').removeClass('hidden');
+    $('.loader').addClass('hidden');
     
+    if (localStorage.getItem('lights') === undefined) {
+        localStorage.setItem('lights', 'true');
+    }
+
     if ( localStorage.getItem('lights') === 'false' ) {
         root.style.setProperty('--js-main', '#333');
         root.style.setProperty('--js-main-offset', '#373737');
