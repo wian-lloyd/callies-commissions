@@ -1,5 +1,80 @@
 $(document).ready(function () {
-    let root = document.documentElement;
+    /*-------------------- COLOUR THEME --------------------*/
+        // light
+        let mainLight = '#FFFFFF';
+        let offsetLight = '#f4f4f4;';
+        let fontLight = '#FFFFFF';
+        let contrastLight = '#555';
+
+        // dark
+        let mainDark = '#333';
+        let offsetDark = '#373737';
+        let fontDark = '#555';
+        let contrastDark = '#FFFFFF';
+    /*------------------------------------------------------*/
+
+    /*-------------------- SETUP --------------------*/
+        /* init variables */
+        let root = document.documentElement;
+
+        /* loader */
+        $('#content').removeClass('hidden');
+        $('.loader').addClass('hidden');
+
+        /* parralax images */
+        $('.header-img-parallax').parallax({imageSrc: 'resources/img/source.gif'});
+        $('.reviews-img-parallax').parallax({imageSrc: 'resources/img/original.gif'});
+
+        /* colour theme */
+        let darkMode = localStorage.getItem('darkMode');
+        if (localStorage.getItem('darkMode') === null) {
+            localStorage.setItem('darkMode', 'false'); // if no mode is set, set to light
+        }
+        if ( darkMode === 'false' ) {
+            root.style.setProperty('--js-main', mainLight);
+            root.style.setProperty('--js-main-offset', offsetLight);
+            root.style.setProperty('--js-font', fontLight);
+            root.style.setProperty('--js-font-contrast', contrastLight);
+    
+            $(".js--switch-lights input[type='checkbox']").prop('checked', false);
+        }else {
+            root.style.setProperty('--js-main', mainDark);
+            root.style.setProperty('--js-main-offset', offsetDark);
+            root.style.setProperty('--js-font', fontDark);
+            root.style.setProperty('--js-font-contrast', contrastDark);
+    
+            $(".js--switch-lights input[type='checkbox']").prop('checked', true);
+        }
+    /*-----------------------------------------------*/
+    
+    /*-------------------- FUNCTIONS --------------------*/
+        function darkModeSwitch() {
+            if ( darkMode === 'false' ) { // if dark mode is disabled, enable it
+                root.style.setProperty('--js-main', mainDark);
+                root.style.setProperty('--js-main-offset', offsetDark);
+                root.style.setProperty('--js-font', fontDark);
+                root.style.setProperty('--js-font-contrast', contrastDark);
+
+                localStorage.setItem('darkMode', 'true');
+                darkMode = localStorage.getItem('darkMode');
+
+            }else { // if dark mode is enabled, disable it
+                root.style.setProperty('--js-main', mainLight);
+                root.style.setProperty('--js-main-offset', offsetLight);
+                root.style.setProperty('--js-font', fontLight);
+                root.style.setProperty('--js-font-contrast', contrastLight);
+
+                localStorage.setItem('darkMode', 'false');
+                darkMode = localStorage.getItem('darkMode');
+
+            };
+        };
+    /*---------------------------------------------------*/
+
+    /*--------------------- TRIGGERS ---------------------*/
+    $(".js--switch-lights").mouseup(darkModeSwitch); // toggle dark mode
+
+    /*----------------------------------------------------*/
 
     $(window).on("load", function() {
         /* loader */
@@ -7,46 +82,6 @@ $(document).ready(function () {
         // $('#content').removeClass('hidden');
         // $('.loader').addClass('hidden');
     });
-
-    /* loader */
-    $('#content').removeClass('hidden');
-    $('.loader').addClass('hidden');
-    
-    if (localStorage.getItem('lights') === undefined) {
-        localStorage.setItem('lights', 'true');
-    }
-
-    if ( localStorage.getItem('lights') === 'false' ) {
-        root.style.setProperty('--js-main', '#333');
-        root.style.setProperty('--js-main-offset', '#373737');
-        root.style.setProperty('--js-font', '#555');
-        root.style.setProperty('--js-font-contrast', '#FFFFFF');
-        localStorage.setItem('lights', 'false');
-
-        $(".js--switch-lights input[type='checkbox']").prop('checked', true);
-    }
-
-    $(".js--switch-lights").mouseup(function() {
-        let lights = localStorage.getItem('lights');
-
-        if ( lights === 'true' ) {
-            root.style.setProperty('--js-main', '#333');
-            root.style.setProperty('--js-main-offset', '#373737');
-            root.style.setProperty('--js-font', '#555');
-            root.style.setProperty('--js-font-contrast', '#FFFFFF');
-            localStorage.setItem('lights', 'false');
-        }else {
-            root.style.setProperty('--js-main', '#FFFFFF');
-            root.style.setProperty('--js-main-offset', '#f4f4f4');
-            root.style.setProperty('--js-font', '#FFFFFF');
-            root.style.setProperty('--js-font-contrast', '#555');
-            localStorage.setItem('lights', 'true');
-        }
-    });
-
-    /* parralax images */
-    $('.header-img-parallax').parallax({imageSrc: 'resources/img/source.gif'});
-    $('.reviews-img-parallax').parallax({imageSrc: 'resources/img/original.gif'});
 
     /* dynamic date */
     var date = new Date().getFullYear();

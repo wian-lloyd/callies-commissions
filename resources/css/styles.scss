@@ -47,11 +47,11 @@
 
     /* 0.1 colors */
 
-    :root { // light
-        --js-main: #FFFFFF;
-        --js-main-offset: #f4f4f4;
-        --js-font: #FFFFFF;
-        --js-font-contrast: #555;
+    :root {
+        --js-main: ;
+        --js-main-offset: ;
+        --js-font: ;
+        --js-font-contrast: ;
     } // these are dynamically accessible 
 
     $color-background: var(--js-main);
@@ -1170,7 +1170,7 @@
     cursor: pointer; /* Add a pointer on hover */
 }
     
-.stop-scrolling { // disable scrolling
+.scroll-lock { // disable scrolling
     height: 100%; 
     overflow: hidden; 
 } 
