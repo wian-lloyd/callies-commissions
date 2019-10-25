@@ -14,12 +14,30 @@ $(document).ready(function () {
     /*------------------------------------------------------*/
 
     /*-------------------- SETUP --------------------*/
+        $(window).on("load", function() {
+
+            /* feedback modal */
+            let feedback = localStorage.getItem('feedbackClosed');
+            if (localStorage.getItem('feedbackClosed') === null) {
+                localStorage.setItem('feedbackClosed', 'true'); // if no mode is set, set to light
+            }else {
+
+        }
+
+
+            setTimeout(() => {
+                $('#overlay').removeClass('hidden');
+                $('#feedbackModal').removeClass('hidden');
+                $('body').addClass('scroll-lock');
+            }, 2000);
+        });
+
         /* init variables */
         let root = document.documentElement;
 
         /* loader */
-        $('#content').removeClass('hidden');
         $('.loader').addClass('hidden');
+        $('#content').removeClass('hidden');
 
         /* parralax images */
         $('.header-img-parallax').parallax({imageSrc: 'resources/img/source.gif'});
@@ -73,6 +91,12 @@ $(document).ready(function () {
 
     /*--------------------- TRIGGERS ---------------------*/
     $(".js--switch-lights").mouseup(darkModeSwitch); // toggle dark mode
+
+    $('#js--feedback-modal-close').click(() => {
+        $('#overlay').addClass('hidden');
+        $('#feedbackModal').addClass('hidden');
+        $('body').removeClass('scroll-lock');
+    });
 
     /*----------------------------------------------------*/
 
