@@ -33,6 +33,39 @@
         <img class="loader__img" src="./resources/img/loader-hd.gif" alt="loader">
     </div>
 
+    <!-- Overlay -->
+    <div id="overlay" class="hidden"></div>
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" class="hidden">
+        <div class="modal">
+            <a href="#" id="js--feedback-modal-close" class="modal__close-btn"><i class="fas fa-times"></i></a>
+            <div class="modal__header">
+                <h2>Still in Development...</h2>
+            </div>
+            <div class="modal__body">
+                <p class="long-copy">
+                    Hello, My name is Wian and I'm the developer of this site.
+                </p>
+                <br><br>
+                <p class="long-copy">
+                    This site is still a work in progress, so if you run into any issues with it,
+                    I'd appreciate your feedback.
+                </p>
+                <br><br>
+                <p class="long-copy">
+                    If you decide to log an issue, please be as concise as possible, giving me
+                    steps on how to reproduce the issue and attach screenshots if you can.
+                </p>
+            </div>
+            <div class="modal__footer">
+                <div class="row">
+                    <a href="#" class="modal__bug-btn"><i class="fas fa-bug"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="content" class="hidden">
         <header class="header-img-parallax">
             <nav>
@@ -95,23 +128,74 @@
                 <i class="fas fa-angle-up back-to-top_icon animation--bounce"></i>
             </div>
 
+            <!-- ABOUT SECTION V3 -->
             <section class="section-about" id="about">
                 <div class="row">
                     <h2>About Me</h2>
+                    <div class="row">
+                        <div class="col span-1-of-2 about_img_container">
+                            <div class="sprite pop pop--one"></div>
+                            <div class="sprite pop pop--two"></div>
+                            <div class="sprite sparkle sparkle--one"></div>
+                            <div class="sprite sparkle sparkle--two"></div>
+                            <div class="sprite sparkle sparkle--three"></div>
+                            <div class="sprite light light--one"></div>
+                            <div class="sprite light light--two"></div>
+                            <div class="sprite cross cross--one"></div>
+                            <div class="sprite cross cross--two"></div>
+                            <div class="sprite cross cross--three"></div>
+
+                            <div class="about_img"></div>
+                            <div class="float-shadow"></div>
+                        </div>
+                        <div class="col span-1-of-2">
+                            <div class="row">
+                                <p class="long-copy">
+                                    Hello, My name's Callie and I'm an Asian self taught digital artist! 
+                                    I speak a little bit of Cantonese as well as English.
+                                    I've been drawing for a little over 5 years and only started drawing seriously a year ago.
+                                    I love drawing cute anime girls and getting that bread!
+                                </p>
+                            </div>
+                            <div class="row about-links">
+                                <a href="https://twitter.com/callieearts" target="_blank">twitter</a> <span>•</span> 
+                                <a href="https://www.instagram.com/coriwickk/" target="_blank">instagram</a> <span>•</span> 
+                                <a href="https://www.twitch.tv/caatsucurry" target="_blank">twitch</a> <span>•</span> 
+                                <a href="https://curiouscat.me/callieearts" target="_blank">curious cat</a>
+                                <br>
+                                <br>
+                                <a href="">support me {here}!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT SECTION V2 -->
+            <!-- <section class="section-about" id="about">
+                <div class="test">
+                    <div class="quote">
+                        “The Way Get Started Is To Quit Talking And Begin Doing.” – Walt Disney
+                    </div>
+                </div>
+
+                <span class="dot">
+                    <img class="img" src="./resources/img/about_img.jpg" alt="">
+                </span>
+
+                <h2>About Me</h2>
+                <div class="row">
                     <p class="long-copy">
                         Hello, My name's Callie and I'm an Asian self taught digital artist! 
-                        <br>
-                        <br>
+                        <br><br>
                         I speak a little bit of Cantonese as well as English.
-                        <br>
-                        <br>
+                        <br><br>
                         I've been drawing for a little over 5 years and only started drawing seriously a year ago. 
-                        <br>
-                        <br>
+                        <br><br>
                         I love drawing cute anime girls and getting that bread!
                     </p>
                 </div>
-            </section>
+            </section> -->
 
             <section class="section-showcase" id="showcase">
                 <ul class="showcase">
@@ -294,6 +378,9 @@
                             <a class="link--icon link--icon--twitter" href="https://twitter.com/callieearts" target="_blank"><i class="fab fa-twitter"></i></a>
                         </li>
                         <li class="footer__links">
+                            <a class="link--icon link--icon--curious-cat" href="https://curiouscat.me/callieearts" target="_blank"><i class="fas fa-cat"></i></a>
+                        </li>
+                        <li class="footer__links">
                             <a class="link--icon link--icon--discord" href="https://discord.gg/cx79Hds" target="_blank"><i class="fab fa-discord"></i></a>
                         </li>
                         <li class="footer__links">
@@ -303,7 +390,7 @@
                             <a class="link--icon link--icon--instagram" href="https://www.instagram.com/coriwickk/" target="_blank"><i class="fab fa-instagram"></i></a>
                         </li>
                         <li class="footer__links">
-                            <a class="link--icon link--icon--mail" href="mailto:callieebusiness@gmail.com"><i class="far fa-envelope-open"></i></a>
+                            <a class="link--icon link--icon--mail" href="mailto:callieebusiness@gmail.com" target="_blank"><i class="far fa-envelope-open"></i></a>
                         </li>
                     </ul>
                 </div>
