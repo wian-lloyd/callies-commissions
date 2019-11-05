@@ -2,7 +2,7 @@ $(document).ready(function () {
     /*-------------------- COLOUR THEME --------------------*/
         // light
         let mainLight = '#FFFFFF';
-        let offsetLight = '#f4f4f4;';
+        let offsetLight = '#f4f4f4';
         let fontLight = '#FFFFFF';
         let contrastLight = '#555';
 
@@ -19,17 +19,18 @@ $(document).ready(function () {
             /* feedback modal */
             let feedback = localStorage.getItem('feedbackClosed');
             if (localStorage.getItem('feedbackClosed') === null) {
-                localStorage.setItem('feedbackClosed', 'true'); // if no mode is set, set to light
-            }else {
-
-        }
-
-
-            setTimeout(() => {
                 $('#overlay').removeClass('hidden');
+                $('#overlay').addClass('animation--overlay-fade-in');
+    
                 $('#feedbackModal').removeClass('hidden');
                 $('body').addClass('scroll-lock');
-            }, 2000);
+    
+                $('.modal').addClass('animation--modal-in');
+                setTimeout(() => {
+                    $('.modal').removeClass('animation--modal-in');
+                }, 600);
+            }
+            
         });
 
         /* init variables */
@@ -45,14 +46,21 @@ $(document).ready(function () {
 
         /* colour theme */
         let darkMode = localStorage.getItem('darkMode');
-        if (localStorage.getItem('darkMode') === null) {
+        if (darkMode === null) {
             localStorage.setItem('darkMode', 'false'); // if no mode is set, set to light
+            darkMode = localStorage.getItem('darkMode');
         }
+
         if ( darkMode === 'false' ) {
             root.style.setProperty('--js-main', mainLight);
             root.style.setProperty('--js-main-offset', offsetLight);
             root.style.setProperty('--js-font', fontLight);
             root.style.setProperty('--js-font-contrast', contrastLight);
+
+            $('.cross').css("backgroundImage", "url(./resources/img/sprites/cross-dark.png)");
+            $('.light').css("backgroundImage", "url(./resources/img/sprites/light-dark.png)");
+            $('.pop').css("backgroundImage", "url(./resources/img/sprites/pop-dark.png)");
+            $('.sparkle').css("backgroundImage", "url(./resources/img/sprites/sparkle-dark.png)");
     
             $(".js--switch-lights input[type='checkbox']").prop('checked', false);
         }else {
@@ -60,6 +68,11 @@ $(document).ready(function () {
             root.style.setProperty('--js-main-offset', offsetDark);
             root.style.setProperty('--js-font', fontDark);
             root.style.setProperty('--js-font-contrast', contrastDark);
+
+            $('.cross').css("backgroundImage", "url(./resources/img/sprites/cross-light.png)");
+            $('.light').css("backgroundImage", "url(./resources/img/sprites/light-light.png)");
+            $('.pop').css("backgroundImage", "url(./resources/img/sprites/pop-light.png)");
+            $('.sparkle').css("backgroundImage", "url(./resources/img/sprites/sparkle-light.png)");
     
             $(".js--switch-lights input[type='checkbox']").prop('checked', true);
         }
@@ -73,6 +86,11 @@ $(document).ready(function () {
                 root.style.setProperty('--js-font', fontDark);
                 root.style.setProperty('--js-font-contrast', contrastDark);
 
+                $('.cross').css("backgroundImage", "url(./resources/img/sprites/cross-light.png)");
+                $('.light').css("backgroundImage", "url(./resources/img/sprites/light-light.png)");
+                $('.pop').css("backgroundImage", "url(./resources/img/sprites/pop-light.png)");
+                $('.sparkle').css("backgroundImage", "url(./resources/img/sprites/sparkle-light.png)");
+
                 localStorage.setItem('darkMode', 'true');
                 darkMode = localStorage.getItem('darkMode');
 
@@ -81,6 +99,11 @@ $(document).ready(function () {
                 root.style.setProperty('--js-main-offset', offsetLight);
                 root.style.setProperty('--js-font', fontLight);
                 root.style.setProperty('--js-font-contrast', contrastLight);
+
+                $('.cross').css("backgroundImage", "url(./resources/img/sprites/cross-dark.png)");
+                $('.light').css("backgroundImage", "url(./resources/img/sprites/light-dark.png)");
+                $('.pop').css("backgroundImage", "url(./resources/img/sprites/pop-dark.png)");
+                $('.sparkle').css("backgroundImage", "url(./resources/img/sprites/sparkle-dark.png)");
 
                 localStorage.setItem('darkMode', 'false');
                 darkMode = localStorage.getItem('darkMode');
@@ -93,9 +116,20 @@ $(document).ready(function () {
     $(".js--switch-lights").mouseup(darkModeSwitch); // toggle dark mode
 
     $('#js--feedback-modal-close').click(() => {
-        $('#overlay').addClass('hidden');
-        $('#feedbackModal').addClass('hidden');
+
+        $('.modal').addClass('animation--modal-out');
+        setTimeout(() => {
+            $('.modal').removeClass('animation--modal-out');
+            $('#feedbackModal').addClass('hidden');
+        }, 600);
+
+        $('#overlay').addClass('animation--overlay-fade-out');
+        setTimeout(() => {
+            $('#overlay').addClass('hidden');
+        }, 200);
+
         $('body').removeClass('scroll-lock');
+        localStorage.setItem('feedbackClosed', 'true'); // set so that modal doesn't show again
     });
 
     /*----------------------------------------------------*/
