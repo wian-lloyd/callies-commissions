@@ -74,6 +74,12 @@
     }
 }
 
+// background image shift
+@keyframes background-shift {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
 // modals
 @keyframes modal-in {
     0% { top: 100%; }

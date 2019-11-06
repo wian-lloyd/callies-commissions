@@ -20,6 +20,22 @@
 	2. components
    ====================*/
 
+    /* 3.0 overlay */
+
+   #overlay {
+        position: fixed; /* Sit on top of the page content */
+        // display: none; /* Hidden by default */
+        width: 100%; /* Full width (cover the whole page) */
+        height: 100%; /* Full height (cover the whole page) */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+        z-index: 998; /* Specify a stack order in case you're using a different order for other elements */
+        cursor: pointer; /* Add a pointer on hover */
+    }
+
     /* 3.0 loader */
 
     .loader {
@@ -327,7 +343,7 @@
     &:visited {
         display: inline-block;
         padding: 10px 30px;
-        font-weight: 300;
+        font-weight: 500;
         text-decoration: none;
         border-radius: 200px;
         transition: background-color 0.2s, border 0.2s, color 0.2s;
@@ -336,35 +352,35 @@
     &--full:link,
     &--full:visited {
         background-color: $color-primary;
-        border: 1px solid $color-primary;
+        border: 2px solid $color-primary;
         color: $text-main-contrast-static;
         margin-right: 15px;
 
         &:hover {
             background-color: $color-primary-hover;
-            border: 1px solid $color-primary-hover;
+            border: 2px solid $color-primary-hover;
         }
 
         &:active {
             background-color: $color-secondary;
-            border: 1px solid $color-secondary;
+            border: 2px solid $color-secondary;
         }
     }
 
     &--outline:link,
     &--outline:visited {
-        border: 1px solid $color-primary;
+        border: 2px solid $color-primary;
         color: $color-primary;
 
         &:hover {
             background-color: $color-primary-hover;
-            border: 1px solid $color-primary-hover;
+            border: 2px solid $color-primary-hover;
             color: $text-main-contrast-static;
         }
 
         &:active {
             background-color: $color-secondary;
-            border: 1px solid $color-secondary;
+            border: 2px solid $color-secondary;
             color: $text-main-contrast-static;
         }
     }

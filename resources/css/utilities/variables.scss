@@ -65,4 +65,15 @@
     $color-tech-js: #FFDA07;
     $color-tech-gitKraken: #179287;
 
+    $gradient-main: linear-gradient(
+        45deg,
+        #fff,
+        #fff,
+        #ff6f91,
+        #EA9999,
+        #ff9671,
+        #ffc75f,
+        #f9f871
+    );
+
     /* if you can't see these, they are compiled away by scss */
