@@ -1,0 +1,68 @@
+/* ////////////////////
+	TABLE OF CONTENT
+
+	0. variables
+        0.1 colors
+        0.2 fonts
+        0.3 social colors
+        0.4 tech colors 
+
+//////////////////// */
+
+/* ====================
+	0. variables
+   ====================*/
+
+    /* 0.1 colors */
+
+    :root {
+        --js-main: ;
+        --js-main-offset: ;
+        --js-font: ;
+        --js-font-contrast: ;
+    } // these are dynamically accessible 
+
+    $color-background: var(--js-main);
+    $color-background-contrast: var(--js-main-offset);
+
+    $text-main: var(--js-font); // light to dark text
+    $text-main-contrast: var(--js-font-contrast); // dark to light text
+    $text-main-contrast-static: #FFFFFF; // unchanging light text
+
+    $color-primary: #EA9999; // light salmon pink
+    $color-primary-hover: #E47D7D;
+    $color-secondary: #D4E09B; // medium spring bud
+
+    $color-background-dark: #333333;
+
+    /* 0.2 fonts */
+
+    $font-primary: 'Montserrat', sans-serif;
+    $font-secondary: 'Chilanka', cursive;
+
+    /* 0.3 social colors */
+
+    $color-brand-twitter: #1DA1F2;
+    $color-brand-discord: #7289DA;
+    $color-brand-twitch: #6441A4;
+    $color-brand-instagram: #CD3081;
+    $color-brand-reddit: #FF4500;
+    $color-brand-linkedin: #0271AE;
+    $color-brand-github: #24292E;
+    $color-brand-facebook: #1774EB;
+    $color-brand-spotify: #1AD15C;
+    $color-brand-stackoverflow: #EC771F;
+    $color-brand-youtube: #F80000;
+    $color-brand-mixer: #001F4E;
+    $color-brand-steam: #0C1C49;
+    $color-brand-deviantart: #05C645;
+    $color-brand-curious-cat: #CC871E;
+
+    /* 0.4 tech colors */
+
+    $color-tech-sass: #CF649A;
+    $color-tech-html: #E34F26;
+    $color-tech-js: #FFDA07;
+    $color-tech-gitKraken: #179287;
+
+    /* if you can't see these, they are compiled away by scss */
