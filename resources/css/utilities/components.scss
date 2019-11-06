@@ -2,6 +2,12 @@
 	TABLE OF CONTENT
 
     2. components
+        3.0 loader
+        3.1 header
+            3.1.1 main nav
+            3.1.2 sticky nav
+        3.2 footer
+
         2.1 buttons
         2.2 sections
         2.3 toggle-switches
@@ -13,6 +19,306 @@
 /* ====================
 	2. components
    ====================*/
+
+    /* 3.0 loader */
+
+    .loader {
+        height: 100vh; 
+        background-color: $color-background-dark;
+        z-index: 1000;
+
+        &__img {
+            height: 300px; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    header {
+        
+        /* 3.1.1 main nav */
+        nav { // non-sticky nav
+            .nav__logo {
+                height: 200px;
+                width: auto;
+                float: left;
+                margin-top: 20px;
+
+                &--sticky {
+                    display: none;
+                }
+            }
+
+            .main-nav {
+                float: right;
+                list-style: none;
+                margin-top: 55px;
+
+                .switch {
+                    top: 5%;
+                }
+
+                &__item {
+                    list-style: none;
+                    display: inline-block;
+                    margin-left: 40px;
+
+                    i {
+                        margin-left: 5px;
+                    }
+
+                    .anchor {
+                        &--main {
+                            color: $text-main-contrast-static;
+                        }
+
+                        &--sub {
+                            color: $text-main-contrast-static;
+                        }
+
+                        &:link,
+                        &:visited {
+                            padding: 8px 0;
+                            text-decoration: none;
+                            font-size: 90%;
+                            border-bottom: 3px solid transparent;
+                            transition: border-bottom 0.2s, color 0.2s;
+                        }
+
+                        &:hover {
+                            border-bottom: 3px solid $color-primary;
+                        }
+
+                        &:active {
+                            color: $color-secondary;
+                            border-bottom: 3px solid $color-secondary;
+                        }
+                    }
+
+                    &:hover > .sub-nav {
+                        z-index: 99;
+                        visibility: visible;
+
+                        .sub-nav__item {
+                            opacity: 1;
+                            transform: translate(0, 10px);
+                        }
+                    } // by hovering a main-nav item, show the sub-nav
+
+                    .sub-nav {
+                        z-index: -99;
+                        position: absolute;
+                        visibility: hidden;
+
+                        &__item {
+                            transform: translate(0, -10px);
+                            opacity: 0;
+                            display: block;
+                            margin-left: -15px;
+                            padding: 12px 20px;
+                            transition: opacity 0.2s, transform 0.3s; 
+                        }
+                    }
+                }
+            }
+        }
+
+        /* 3.1.2 sticky nav */
+        .sticky-nav {
+            position: fixed;
+            width: 100%;
+            z-index: 50;
+            background-color: $color-background;
+            height: 60px;
+
+            -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+            -moz-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+            box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+
+            .nav__logo {
+                display: none;
+                
+                &--sticky {
+                    display: initial;
+                    height: 40px;
+                    margin-top: 10px;
+                }
+            }
+
+            .main-nav {
+                margin-top: 20px;
+
+                .switch {
+                    top: 25%;
+                }
+
+                &__item {
+
+                    .anchor {
+                        &--main {
+                            color: $text-main-contrast;
+                            z-index: 99;
+                        }
+
+                        &--sub {
+                            color: $text-main-contrast;
+                        }
+
+                        &:link,
+                        &:visited {
+                            padding: 13px 0;
+                        }
+                    }
+
+                    &:hover > .sub-nav {
+                        top: 44px;
+                    }
+                    
+                    .sub-nav {
+                        top: -1000px;
+                        background-color: $color-background;
+                        border-radius: 0% 0% 4% 4%;
+                        margin: 16px 0px 0px -25px;
+                        padding: 0px 10px 20px 10px;
+
+                        -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+                        -moz-box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+                        box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+                    }
+                }
+            }
+        }
+    }
+
+    /* 3.2 footer */
+
+    footer {
+        background-color: $color-background-dark;
+        padding: 60px 0 100px 0;
+
+        .footer {
+            &__text-links,
+            &__social-links {
+                list-style: none;
+                display: inline-block;
+                margin-bottom: 50px;
+            }
+
+            &__links {
+                margin: 0 5px;
+                display: inline-block;
+
+                .link {
+                    &--text,
+                    &--icon {
+                        color: #555;
+                        text-decoration: none;
+                        transition: color 0.2s;
+                    }
+                }
+            }
+
+            &__text-links {
+                font-size: 80%;
+                float: left;
+
+                .link--text {
+    
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+
+                .tech {
+                    margin-top: 5%;
+                    text-align: center;
+
+                    .link--icon {
+                        font-size: 150%;
+    
+                        &--sass:hover {
+                            color: $color-tech-sass;
+                        }
+    
+                        &--html:hover {
+                            color: $color-tech-html;
+                        }
+    
+                        &--js:hover {
+                            color: $color-tech-js;
+                        }
+
+                        &--git:hover {
+                            color: $color-brand-github;
+                        }
+
+                        &--gitkraken:hover {
+                            color: $color-tech-gitKraken;
+                        }
+                    }
+                }
+            }
+
+            &__social-links {
+                float: right;
+    
+                .link--icon {
+                    font-size: 150%;
+    
+                    &--twitter:hover {
+                        color: $color-brand-twitter;
+                    }
+    
+                    &--discord:hover {
+                        color: $color-brand-discord;
+                    }
+    
+                    &--twitch:hover {
+                        color: $color-brand-twitch;
+                    }
+    
+                    &--instagram:hover {
+                        color: $color-brand-instagram;
+                    }
+    
+                    &--mail:hover {
+                        color: $color-primary;
+                    }
+    
+                    &--curious-cat:hover {
+                        color: $color-brand-curious-cat;
+                    }
+                }
+            }
+        }
+
+        .copyright {
+            color: #555;
+
+            &__text,
+            &__credits {
+                font-size: 70%;
+                font-weight: 600;
+                text-align: center;
+            }
+
+            &__credits {
+                font-family: $font-secondary;
+
+                &--social-link {
+                    color: #555;
+                    text-decoration: none; 
+                    transition: color 0.2s;
+
+                    &:hover {
+                        color: $color-brand-twitter;
+                    }
+                }
+            }
+        }
+    }
 
    /* 2.1 buttons */
    
