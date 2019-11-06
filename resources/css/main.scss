@@ -513,6 +513,77 @@
         }
    /* -------------------- -------- -------------------- */
 
+/* twitch */
+ .section-twitch {
+    // background-color: $color-brand-twitch;
+    background-color: #9146FF;
+    overflow: hidden;
+
+    h6 {
+        img {
+            width: 150px;
+        }
+        word-spacing: 2px;
+        text-align: center;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+    }
+
+    h6:after {
+        display: block;
+        height: 3px;
+        background-color: $text-main;
+        content: " ";
+        width: 100px;
+        margin: 0 auto;
+        margin-top: 30px;
+    } // accent after section headers
+
+    .decorative-text {
+        font-weight: bold;
+        font-size: 95px;
+        letter-spacing: -0.03em;
+        color: rgba(0, 0, 0, 0.13);
+        line-height: 1.2;
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+        
+        .container {
+            white-space: nowrap;
+        }
+
+        div {
+            display:inline-block;
+            position: relative;
+
+            span {
+                color: $text-main;
+                transition: color 150ms ease-in-out;
+
+                &:hover {
+                    color: $text-main-contrast;
+
+                    &::before {
+                        width: 100%;
+                    }
+                }
+
+                &::before {
+                    transition: width 300ms ease-in-out;
+                    content: ' ';
+                    position: absolute;
+                    bottom: 0px;
+                    background-color: $text-main-contrast;
+                    height: 10px;
+                    width: 0%;
+                }
+            }
+        }
+    }
+ }
+
     /* -------------------- reviews -------------------- */
         .section-reviews {
             background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
