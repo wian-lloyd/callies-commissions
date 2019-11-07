@@ -74,6 +74,30 @@
     }
 }
 
+// twitch text jump
+@keyframes text-jump {
+    0% { 
+      transform: translateY(5.2083333333vw); 
+      opacity: 0; 
+    }
+    5% { 
+      transform: translateY(5.2083333333vw); 
+      opacity: 1; 
+    }
+   15% { transform: translateY(5.2604166667vw); }
+   20% { transform: translateY(5.34375vw); }
+   25% { transform: translateY(5.375vw); }
+   30% { transform: translateY(5.34375vw); }
+   39% { transform: translateY(4.9322916667vw); }
+   40% { transform: translateY(1.7359375vw); }
+   51% { transform: translateY(1.125vw); }
+   65% { transform: translateY(0.5208333333vw); }
+  100% { 
+    transform: translateY(0vw); 
+    opacity: 1;
+  } 
+}
+
 // background image shift
 @keyframes background-shift {
     0% { background-position: 0 0; }

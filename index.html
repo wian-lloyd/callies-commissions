@@ -30,7 +30,7 @@
 </head>
 <body>
     <div class="loader">
-        <img class="loader__img" src="./resources/img/loader-hd.gif" alt="loader">
+        <img class="loader__img" src="./resources/img/loaders/loader-hd.gif" alt="loader">
     </div>
 
     <!-- Overlay -->
@@ -41,6 +41,7 @@
         <div class="modal">
             <a href="#" id="js--feedback-modal-close" class="modal__close-btn"><i class="fas fa-times"></i></a>
             <div class="modal__header">
+                <div style="font-size: 10px; position: absolute; top: 10px; right: 40%;">-- WORK IN PROGRESS SECTION --</div>
                 <h2>Still in Development...</h2>
             </div>
             <div class="modal__body">
@@ -233,48 +234,153 @@
                 <ul class="showcase">
                     <li class="showcase_item">
                         <figure class="showcase_photo">
-                            <img src="./resources/img/gallery/1.png" alt="gallery_1">
+                            <div class="showcase_photo_about">
+                                <p>Image 1</p>
+                                <span>(click to view)</span>
+                            </div>
+                            <img src="./resources/img/gallery/1.png" alt="gallery_1" onclick="CurrentSlide(1);">
                         </figure>
                     </li>
                     <li class="showcase_item">
                         <figure class="showcase_photo">
-                            <img src="./resources/img/gallery/2.png" alt="gallery_2">
+                            <div class="showcase_photo_about">
+                                <p>Image 2</p>
+                                <span>(click to view)</span>
+                            </div>
+                            <img src="./resources/img/gallery/2.png" alt="gallery_2" onclick="CurrentSlide(2);">
                         </figure>
                     </li>
                     <li class="showcase_item">
                         <figure class="showcase_photo">
-                            <img src="./resources/img/gallery/3.png" alt="gallery_3">
+                            <div class="showcase_photo_about">
+                                <p>Image 3</p>
+                                <span>(click to view)</span>
+                            </div>
+                            <img src="./resources/img/gallery/3.png" alt="gallery_3" onclick="CurrentSlide(3);">
                         </figure>
                     </li>
                     <li class="showcase_item">
                         <figure class="showcase_photo">
-                            <img src="./resources/img/gallery/4.png" alt="gallery_4">
+                            <div class="showcase_photo_about">
+                                <p>Image 4</p>
+                                <span>(click to view)</span>
+                            </div>
+                            <img src="./resources/img/gallery/4.png" alt="gallery_4" onclick="CurrentSlide(4);">
                         </figure>
                     </li>
                 </ul>
                 <ul class="showcase">
                     <li class="showcase_item">
                         <figure class="showcase_photo">
-                            <img src="./resources/img/gallery/5.png" alt="gallery_5">
+                            <div class="showcase_photo_about">
+                                <p>Image 5</p>
+                                <span>(click to view)</span>
+                            </div>
+                            <img src="./resources/img/gallery/5.png" alt="gallery_5" onclick="CurrentSlide(5);">
                         </figure>
                     </li>
                     <li class="showcase_item">
                         <figure class="showcase_photo">
-                            <img src="./resources/img/gallery/6.png" alt="gallery_6">
+                            <div class="showcase_photo_about">
+                                <p>Image 6</p>
+                                <span>(click to view)</span>
+                            </div>
+                            <img src="./resources/img/gallery/6.png" alt="gallery_6" onclick="CurrentSlide(6);">
                         </figure>
                     </li>
                     <li class="showcase_item">
                         <figure class="showcase_photo">
-                            <img src="./resources/img/gallery/7.png" alt="gallery_7">
+                            <div class="showcase_photo_about">
+                                <p>Image 7</p>
+                                <span>(click to view)</span>
+                            </div>
+                            <img src="./resources/img/gallery/7.png" alt="gallery_7" onclick="CurrentSlide(7);">
                         </figure>
                     </li>
                     <li class="showcase_item">
                         <figure class="showcase_photo">
-                            <img src="./resources/img/gallery/8.png" alt="gallery_8">
+                            <div class="showcase_photo_about">
+                                <p>Image 8</p>
+                                <span>(click to view)</span>
+                            </div>
+                            <img src="./resources/img/gallery/8.png" alt="gallery_8" onclick="CurrentSlide(8);">
                         </figure>
                     </li>
                 </ul>
             </section>
+
+
+
+            <!-- Light Box Modal -->
+            <div id="lightboxModal" class="hidden">
+                <div class="modal">
+                    <a href="#" id="js--lightbox-modal-close" class="modal__close-btn"><i class="fas fa-times"></i></a>
+
+                    <div class="modal__header">
+                        <div style="font-size: 10px; position: absolute; top: 10px; right: 40%;">-- WORK IN PROGRESS SECTION --</div>
+
+                        <!-- <h2>Gallery</h2> -->
+                    </div>
+
+                    <div class="modal__body">
+                        <div class="mySlides" data-description="gallery_img_1 description">
+                            <img src="./resources/img/gallery/full-size/1.png" alt="gallery_img_1" style="width:50%">
+                            <div class="numbertext">1 / 8</div>
+                        </div>
+                    
+                        <div class="mySlides" data-description="gallery_img_2 description">
+                            <img src="./resources/img/gallery/full-size/2.png" alt="gallery_img_2" style="width:70%">
+                            <div class="numbertext">2 / 8</div>
+                        </div>
+                    
+                        <div class="mySlides" data-description="gallery_img_3 description">
+                            <img src="./resources/img/gallery/full-size/3.png" alt="gallery_img_3" style="width:70%">
+                            <div class="numbertext">3 / 8</div>
+                        </div>
+                    
+                        <div class="mySlides" data-description="gallery_img_4 description">
+                            <img src="./resources/img/gallery/full-size/4.png" alt="gallery_img_4" style="width:50%">
+                            <div class="numbertext">4 / 8</div>
+                        </div>
+
+                        <div class="mySlides" data-description="gallery_img_5 description">
+                            <img src="./resources/img/gallery/full-size/5.png" alt="gallery_img_5" style="width:50%">
+                            <div class="numbertext">5 / 8</div>
+                        </div>
+                    
+                        <div class="mySlides" data-description="gallery_img_6 description">
+                            <img src="./resources/img/gallery/full-size/6.png" alt="gallery_img_6" style="width:70%">
+                            <div class="numbertext">6 / 8</div>
+                        </div>
+                    
+                        <div class="mySlides" data-description="gallery_img_7 description">
+                            <img src="./resources/img/gallery/full-size/7.png" alt="gallery_img_7" style="width:70%">
+                            <div class="numbertext">7 / 8</div>
+                        </div>
+                    
+                        <div class="mySlides" data-description="gallery_img_8 description">
+                            <img src="./resources/img/gallery/full-size/8.png" alt="gallery_img_8" style="width:70%">
+                            <div class="numbertext">8 / 8</div>
+                        </div>
+
+                        <!-- <div class="lightbox__controls"> -->
+                            <a class="--prev"><i class="fas fa-angle-left"></i></a>
+                            <a class="--next"><i class="fas fa-angle-right"></i></a>
+                        <!-- </div> -->
+
+                    </div>
+
+                    <div class="modal__footer">
+                        <div class="row">
+                            <div class="caption-container">
+                                <p id="caption"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
 
             <section class="section-twitch" id="twitch">
                 <h6>
@@ -309,8 +415,9 @@
                         height: 30px;
                         width: 600px;
                         background-color: #fff;
+                        overflow: hidden;
                     ">
-                        <p style="color: black; text-align: center; font-weight: bold;">
+                        <p style="color: black; text-align: center; font-weight: bold; animation: text-jump 0.2s;">
                             https://www.twitch.tv/caatsucurry
                         </p>
                     </div>
