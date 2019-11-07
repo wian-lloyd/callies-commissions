@@ -7,7 +7,7 @@
 
     <!-- link properties -->
     <!-- TODO: change this meta info before official launch -->
-    <link rel="icon" type="image/png" href="/resources/img/favicon.png">
+    <link rel="icon" type="image/png" href="/resources/img/logos/favicon.png">
     <meta name="description" content="Callie website demo.">
     <!-- <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="/resources/favicons/mstile-144x144.png">
@@ -19,8 +19,8 @@
     <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
     <link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
 
-    <link rel="stylesheet" type="text/css" href="resources/css/compiled/styles.min.css">
-    <link rel="stylesheet" type="text/css" href="resources/css/compiled/queries.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/compiled/main.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="resources/css/compiled/queries.min.css"> -->
 
     <!-- fonts -->
     <link rel="stylesheet" type="text/css" href="./vendors/fonts/fontawesome-free-5.11.2-web/css/all.css">
@@ -68,10 +68,11 @@
 
     <div id="content" class="hidden">
         <header class="header-img-parallax">
+            <!-- Navigation -->
             <nav>
                 <div class="row">
-                    <img src="/resources/img/logo.png" alt="logo" class="nav__logo">
-                    <img src="/resources/img/logo.png" alt="logo" class="nav__logo--sticky">
+                    <img src="/resources/img/logos/logo.png" alt="logo" class="nav__logo">
+                    <img src="/resources/img/logos/logo.png" alt="logo" class="nav__logo--sticky">
                     <ul class="main-nav">
                         <li class="main-nav__item">
                             <a class="anchor anchor--main" href="#about">About</a>
@@ -83,13 +84,13 @@
                                 <!-- <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Progress</a></li> -->
                             </ul>
                         </li>
-                        <!-- <li class="main-nav__item">
+                        <li class="main-nav__item">
                             <a class="anchor anchor--main" href="#">Social<i class="fas fa-angle-down"></i></a>
                             <ul class="sub-nav">
-                                <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Discord</a></li>
-                                <li class="sub-nav__item"><a class="anchor anchor--sub" href="">Twitch</a></li>
+                                <!-- <li class="sub-nav__item"><a class="anchor anchor--sub" href="#">Discord</a></li> -->
+                                <li class="sub-nav__item"><a class="anchor anchor--sub" href="#twitch">Twitch</a></li>
                             </ul>
-                        </li> -->
+                        </li>
                         <li class="main-nav__item">
                             <a class="anchor anchor--main" href="#">Reviews<i class="fas fa-angle-down"></i></a>
                             <ul class="sub-nav">
@@ -112,9 +113,11 @@
                     </ul>
                 </div>
             </nav>
+
+            <!-- Hero Section -->
             <div class="hero__text-box">
                 <h1 class="hero__main-text">
-                    Goodbye boring art.
+                    <span>Goodbye boring art.</span>
                     <br>
                     Hello amazing Callie art! 
                 </h1>
@@ -124,6 +127,8 @@
         </header>
     
         <main id="js--page-content">
+
+            <!-- Back-to-top -->
             <div class="back-to-top tooltip tooltip--left hidden" data-tooltip="Back to the top of the page, please.">
                 <i class="fas fa-angle-up back-to-top_icon animation--bounce"></i>
             </div>
@@ -173,27 +178,54 @@
 
             <!-- ABOUT SECTION V2 -->
             <!-- <section class="section-about" id="about">
-                <div class="test">
+                <div class="top-accent">
                     <div class="quote">
                         “The Way Get Started Is To Quit Talking And Begin Doing.” – Walt Disney
                     </div>
                 </div>
 
-                <span class="dot">
-                    <img class="img" src="./resources/img/about_img.jpg" alt="">
+                <span class="circle-border">
+                    <div class="sprite pop pop--one"></div>
+                    <div class="sprite pop pop--two"></div>
+                    <div class="sprite sparkle sparkle--one"></div>
+                    <div class="sprite light light--one"></div>
+                    <div class="sprite light light--two"></div>
+                    <div class="sprite cross cross--one"></div>
+                    <img class="img" src="./resources/img/placeholders/about_img.jpg" alt="">
+                    <div class="float-shadow"></div>
                 </span>
 
                 <h2>About Me</h2>
-                <div class="row">
-                    <p class="long-copy">
-                        Hello, My name's Callie and I'm an Asian self taught digital artist! 
-                        <br><br>
-                        I speak a little bit of Cantonese as well as English.
-                        <br><br>
-                        I've been drawing for a little over 5 years and only started drawing seriously a year ago. 
-                        <br><br>
-                        I love drawing cute anime girls and getting that bread!
-                    </p>
+
+                <div class="row about">
+                    <div class="col span-1-of-2">
+                        <p class="about_text left">
+                            Jelly-o pudding tart candy canes biscuit candy canes ice cream tootsie roll cupcake. 
+                            Chupa chups cotton candy cookie cookie toffee sesame snaps. Jujubes danish caramels 
+                            chocolate cake cake fruitcake chocolate cake chocolate bar. Biscuit icing caramels lemon 
+                            drops jujubes dragée cheesecake. Caramels candy canes pastry jelly beans lemon drops macaroon 
+                            tootsie roll cake cotton candy. Chupa chups powder oat cake bear claw halvah gingerbread 
+                            croissant chocolate sugar plum.
+                        </p>
+                    </div>
+                    <div class="col span-1-of-2">
+                        <p class="about_text right">
+                            Sugar plum tootsie roll oat cake. Cake toffee liquorice. Danish jujubes bear claw gummies.
+                             Jelly beans topping pastry pie. Lollipop pie biscuit powder sugar plum dragée chocolate dessert. 
+                             Gingerbread bonbon lemon drops jelly chocolate muffin lemon drops. Chocolate chocolate bar chocolate
+                              soufflé lemon drops pudding marzipan pastry sesame snaps. Tiramisu topping muffin toffee. Carrot 
+                              cake gingerbread bear claw halvah dragée caramels gummi bears.
+                        </p>
+                    </div>
+                </div>
+                <div class="row about-links">
+                    <a href="https://twitter.com/callieearts" target="_blank">twitter</a> <span>•</span> 
+                    <a href="https://www.instagram.com/coriwickk/" target="_blank">instagram</a> <span>•</span> 
+                    <a href="https://www.twitch.tv/caatsucurry" target="_blank">twitch</a> <span>•</span> 
+                    <a href="https://curiouscat.me/callieearts" target="_blank">curious cat</a>
+                    <br>
+                    <br>
+                    <a href="">support me {here}!</a>
                 </div>
             </section> -->
 
@@ -242,6 +274,86 @@
                         </figure>
                     </li>
                 </ul>
+            </section>
+
+            <section class="section-twitch" id="twitch">
+                <h6>
+                    <img src="./resources/img/brand-logos/twitch.svg" alt="twitch_logo">
+                    <br>
+                    -- WORK IN PROGRESS SECTION --
+                </h6>
+
+                <div style="position: relative;">
+                    <div style="
+                        position: absolute;
+                        box-shadow: 2px 0px 2px 2px rgba(0,0,0, 0.2);
+                        border-radius: 15px 15px 0 0;
+                        z-index: 3;
+                        top: 80px;
+                        right: 10%;
+                        height: 350px;
+                        width: 600px;
+                        background-image: url('./resources/img/twitch/twitch.gif');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    ">
+                    </div>
+
+                    <div style="
+                        position: absolute;
+                        box-shadow: 2px 2px 2px 2px rgba(0,0,0, 0.2);
+                        border-radius: 0 0 15px 15px;
+                        z-index: 2;
+                        bottom: -460px;
+                        right: 10%;
+                        height: 30px;
+                        width: 600px;
+                        background-color: #fff;
+                    ">
+                        <p style="color: black; text-align: center; font-weight: bold;">
+                            https://www.twitch.tv/caatsucurry
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="decorative-text">
+                    <div class="container">
+                        <div>atting</div>
+                        <div><span>Art</span></div>
+                        <div>Creativity</div>
+                        <div>Games</div>
+                        <div>Music Just C</div>
+                    </div>
+                    <div class="container">
+                        <div>Games</div>
+                        <div><span>Music</span></div>
+                        <div>Just Chatting</div>
+                        <div>Art</div>
+                        <div>Creativity</div>
+                    </div>
+                    <div class="container">
+                        <div>eativity</div>
+                        <div><span>Games</span></div>
+                        <div>Music</div>
+                        <div>Just Chatting</div>
+                        <div>Art Cr</div>
+                    </div>
+                    <div class="container">
+                        <div>tting Art</div>
+                        <div><span>Creativity</span></div>
+                        <div>Games</div>
+                        <div>Music</div>
+                        <div>Just Chatting</div>
+                    </div>
+                    <div class="container">
+                        <div>es Music</div>
+                        <div><span>Just Chatting</span></div>
+                        <div>Art</div>
+                        <div>Creativity</div>
+                        <div>Games</div>
+                    </div>
+                </div>
             </section>
 
             <section class="section-terms js--section-terms" id="terms">
@@ -313,7 +425,7 @@
                                 The Twitch is a chill place, with calm music, and Calliee’s soothing voice
                                 It's a very cute art style, simplistic so it's very easy to look at. It's of my favourite animated character, 
                                 Blanc, from the series Hyperdimension Neptunia.
-                            <cite><img src="./resources/img/customer_2.png" alt="customer_img">Bobtree1</cite>
+                            <cite><img src="./resources/img/customers/customer_2.png" alt="customer_img">Bobtree1</cite>
                         </blockquote>
                     </div>
                     <div class="col span-1-of-3">
@@ -323,7 +435,7 @@
                                 She asked me for my input every step of the way to make sure it's exactly what I invisioned.
                                 Her custom server emotes are super adorable so I ALWAYS use them.
                                 The discord server is super comfy & the twitch steams are so fun to watch.
-                            <cite><img src="./resources/img/customer_1.png" alt="customer_img">Wian LLoyd (ĐM)</cite>
+                            <cite><img src="./resources/img/customers/customer_1.png" alt="customer_img">Wian LLoyd (ĐM)</cite>
                         </blockquote>
                     </div>
                     <div class="col span-1-of-3">
@@ -333,7 +445,7 @@
                                 emotion really well. And I loved the use of colours. The drawing looked awesome. The streams are always fun to watch. 
                                 There's a relaxed and accepting atmosphere and I felt right at home. Talking not only to Calliee but the 
                                 community in general has made me feel like I'm a part of it.
-                            <cite><img src="./resources/img/customer_3.png" alt="customer_img">Skullunar</cite>
+                            <cite><img src="./resources/img/customers/customer_3.png" alt="customer_img">Skullunar</cite>
                         </blockquote>
                     </div>
                 </div>

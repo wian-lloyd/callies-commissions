@@ -41,8 +41,8 @@ $(document).ready(function () {
         $('#content').removeClass('hidden');
 
         /* parralax images */
-        $('.header-img-parallax').parallax({imageSrc: 'resources/img/source.gif'});
-        $('.reviews-img-parallax').parallax({imageSrc: 'resources/img/original.gif'});
+        $('.header-img-parallax').parallax({imageSrc: 'resources/img/backgrounds/source.gif'});
+        $('.reviews-img-parallax').parallax({imageSrc: 'resources/img/backgrounds/original.gif'});
 
         /* colour theme */
         let darkMode = localStorage.getItem('darkMode');
