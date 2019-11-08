@@ -5,16 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- link properties -->
     <!-- TODO: change this meta info before official launch -->
-    <link rel="icon" type="image/png" href="/resources/img/logos/favicon.png">
-    <meta name="description" content="Callie website demo.">
-    <!-- <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="/resources/favicons/mstile-144x144.png">
-    <meta name="msapplication-config" content="/resources/favicons/browserconfig.xml"> -->
-    <meta name="theme-color" content="#ffffff">
 
-    <!-- stylesheets -->
+    <!-- GENERAL META -->
+    <meta name="description" content="Callie website demo.">
+    <!-- <meta property="og:title" content=""> -->
+    <!-- <meta property="og:description" content=""> -->
+    <!-- <meta property="og:image" content=""> -->
+    <!-- <meta property="og:url" content=""> -->
+    <!-- <meta property="og:site_name" content=""> -->
+
+    <!-- MICROSOFT META -->
+    <!-- <meta name="msapplication-TileColor" content="#da532c"> -->
+    <!-- <meta name="msapplication-TileImage" content="/resources/favicons/mstile-144x144.png"> -->
+    <!-- <meta name="msapplication-config" content="/resources/favicons/browserconfig.xml"> -->
+    <!-- <meta name="theme-color" content="#ffffff"> -->
+
+    <!-- TWITTER META -->
+    <!-- <meta name="twitter:title" content=""> -->
+    <!-- <meta name="twitter:description" content=""> -->
+    <!-- <meta name="twitter:image" content=""> -->
+    <!-- <meta name="twitter:image:alt" content=""> -->
+    <!-- <meta name="twitter:card" content=""> -->
+    <!-- <meta name="twitter:site" content=""> -->
+
+    <!-- FACEBOOK META -->
+    <!-- <meta property="fb:app_id" content=""/> --> 
+
+    <!-- STYLESHEETS -->
     <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
     <link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
@@ -22,54 +40,30 @@
     <link rel="stylesheet" type="text/css" href="resources/css/compiled/main.min.css">
     <!-- <link rel="stylesheet" type="text/css" href="resources/css/compiled/queries.min.css"> -->
 
-    <!-- fonts -->
+    <!-- FONTS -->
     <link rel="stylesheet" type="text/css" href="./vendors/fonts/fontawesome-free-5.11.2-web/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Chilanka|Montserrat:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
 
+    <!-- HEADER -->
     <title>Callie's Commissions</title>
+    <link rel="icon" type="image/png" href="/resources/img/logos/favicon.png">
 </head>
 <body>
+
+    <!-- LOADER -->
     <div class="loader">
         <img class="loader__img" src="./resources/img/loaders/loader-hd.gif" alt="loader">
     </div>
 
-    <!-- Overlay -->
+    <!-- OVERLAY -->
     <div id="overlay" class="hidden"></div>
 
-    <!-- Feedback Modal -->
-    <div id="feedbackModal" class="hidden">
-        <div class="modal">
-            <a href="#" id="js--feedback-modal-close" class="modal__close-btn"><i class="fas fa-times"></i></a>
-            <div class="modal__header">
-                <div style="font-size: 10px; position: absolute; top: 10px; right: 40%;">-- WORK IN PROGRESS SECTION --</div>
-                <h2>Still in Development...</h2>
-            </div>
-            <div class="modal__body">
-                <p class="long-copy">
-                    Hello, My name is Wian and I'm the developer of this site.
-                </p>
-                <br><br>
-                <p class="long-copy">
-                    This site is still a work in progress, so if you run into any issues with it,
-                    I'd appreciate your feedback.
-                </p>
-                <br><br>
-                <p class="long-copy">
-                    If you decide to log an issue, please be as concise as possible, giving me
-                    steps on how to reproduce the issue and attach screenshots if you can.
-                </p>
-            </div>
-            <div class="modal__footer">
-                <div class="row">
-                    <a href="#" class="modal__bug-btn"><i class="fas fa-bug"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div id="content" class="hidden">
+
+        <!-- HEADER -->
         <header class="header-img-parallax">
-            <!-- Navigation -->
+
+            <!-- NAVIGATION -->
             <nav>
                 <div class="row">
                     <img src="/resources/img/logos/logo.png" alt="logo" class="nav__logo">
@@ -115,7 +109,7 @@
                 </div>
             </nav>
 
-            <!-- Hero Section -->
+            <!-- HERO SECTION -->
             <div class="hero__text-box">
                 <h1 class="hero__main-text">
                     <span>Goodbye boring art.</span>
@@ -127,9 +121,10 @@
             </div>
         </header>
     
+        <!-- MAIN -->
         <main id="js--page-content">
 
-            <!-- Back-to-top -->
+            <!-- BACK-TO-TOP -->
             <div class="back-to-top tooltip tooltip--left hidden" data-tooltip="Back to the top of the page, please.">
                 <i class="fas fa-angle-up back-to-top_icon animation--bounce"></i>
             </div>
@@ -230,6 +225,7 @@
                 </div>
             </section> -->
 
+            <!-- SHOWCASE SECTION -->
             <section class="section-showcase" id="showcase">
                 <ul class="showcase">
                     <li class="showcase_item">
@@ -309,79 +305,7 @@
                 </ul>
             </section>
 
-
-
-            <!-- Light Box Modal -->
-            <div id="lightboxModal" class="hidden">
-                <div class="modal">
-                    <a href="#" id="js--lightbox-modal-close" class="modal__close-btn"><i class="fas fa-times"></i></a>
-
-                    <div class="modal__header">
-                        <div style="font-size: 10px; position: absolute; top: 10px; right: 40%;">-- WORK IN PROGRESS SECTION --</div>
-
-                        <!-- <h2>Gallery</h2> -->
-                    </div>
-
-                    <div class="modal__body">
-                        <div class="mySlides" data-description="gallery_img_1 description">
-                            <img src="./resources/img/gallery/full-size/1.png" alt="gallery_img_1" style="width:50%">
-                            <div class="numbertext">1 / 8</div>
-                        </div>
-                    
-                        <div class="mySlides" data-description="gallery_img_2 description">
-                            <img src="./resources/img/gallery/full-size/2.png" alt="gallery_img_2" style="width:70%">
-                            <div class="numbertext">2 / 8</div>
-                        </div>
-                    
-                        <div class="mySlides" data-description="gallery_img_3 description">
-                            <img src="./resources/img/gallery/full-size/3.png" alt="gallery_img_3" style="width:70%">
-                            <div class="numbertext">3 / 8</div>
-                        </div>
-                    
-                        <div class="mySlides" data-description="gallery_img_4 description">
-                            <img src="./resources/img/gallery/full-size/4.png" alt="gallery_img_4" style="width:50%">
-                            <div class="numbertext">4 / 8</div>
-                        </div>
-
-                        <div class="mySlides" data-description="gallery_img_5 description">
-                            <img src="./resources/img/gallery/full-size/5.png" alt="gallery_img_5" style="width:50%">
-                            <div class="numbertext">5 / 8</div>
-                        </div>
-                    
-                        <div class="mySlides" data-description="gallery_img_6 description">
-                            <img src="./resources/img/gallery/full-size/6.png" alt="gallery_img_6" style="width:70%">
-                            <div class="numbertext">6 / 8</div>
-                        </div>
-                    
-                        <div class="mySlides" data-description="gallery_img_7 description">
-                            <img src="./resources/img/gallery/full-size/7.png" alt="gallery_img_7" style="width:70%">
-                            <div class="numbertext">7 / 8</div>
-                        </div>
-                    
-                        <div class="mySlides" data-description="gallery_img_8 description">
-                            <img src="./resources/img/gallery/full-size/8.png" alt="gallery_img_8" style="width:70%">
-                            <div class="numbertext">8 / 8</div>
-                        </div>
-
-                        <!-- <div class="lightbox__controls"> -->
-                            <a class="--prev"><i class="fas fa-angle-left"></i></a>
-                            <a class="--next"><i class="fas fa-angle-right"></i></a>
-                        <!-- </div> -->
-
-                    </div>
-
-                    <div class="modal__footer">
-                        <div class="row">
-                            <div class="caption-container">
-                                <p id="caption"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
+            <!-- TWITCH SECTION -->
             <section class="section-twitch" id="twitch">
                 <h6>
                     <img src="./resources/img/brand-logos/twitch.svg" alt="twitch_logo">
@@ -463,6 +387,7 @@
                 </div>
             </section>
 
+            <!-- TERMS OF SERVICE SECTION -->
             <section class="section-terms js--section-terms" id="terms">
                 <div class="row">
                     <h2>Callie’s Commission Terms of Service</h2>
@@ -510,6 +435,7 @@
                 </div>   
             </section>
 
+            <!-- FORM SECTION -->
             <!-- <section class="section-form js--section-form" id="form">
                 <div class="row">
                     <h2>Build Your Commission Here!</h2>
@@ -521,6 +447,7 @@
                 </div>
             </section> -->
 
+            <!-- CUSTOMER REVIEWS SECTION -->
             <section class="section-reviews reviews-img-parallax" id="reviews">
                 <div class="row">
                     <h2>Some reviews from past commissions...</h2>
@@ -557,9 +484,9 @@
                     </div>
                 </div>
             </section>
-
         </main>
     
+        <!-- FOOTER -->
         <footer>
             <div class="footer row">
                 <div class="col span-1-of-2 footer">
@@ -627,6 +554,105 @@
                 </div>
             </div>
         </footer>
+    </div>
+
+    <!-- FEEDBACK MODAL -->
+    <div id="feedbackModal" class="hidden">
+        <div class="modal">
+            <a href="#" id="js--feedback-modal-close" class="modal__close-btn"><i class="fas fa-times"></i></a>
+            <div class="modal__header">
+                <div style="font-size: 10px; position: absolute; top: 10px; right: 40%;">-- WORK IN PROGRESS SECTION --</div>
+                <h2>Still in Development...</h2>
+            </div>
+            <div class="modal__body">
+                <p class="long-copy">
+                    Hello, My name is Wian and I'm the developer of this site.
+                </p>
+                <br><br>
+                <p class="long-copy">
+                    This site is still a work in progress, so if you run into any issues with it,
+                    I'd appreciate your feedback.
+                </p>
+                <br><br>
+                <p class="long-copy">
+                    If you decide to log an issue, please be as concise as possible, giving me
+                    steps on how to reproduce the issue and attach screenshots if you can.
+                </p>
+            </div>
+            <div class="modal__footer">
+                <div class="row">
+                    <a href="#" class="modal__bug-btn"><i class="fas fa-bug"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="hidden">
+        <div class="modal">
+            <a href="#" id="js--lightbox-modal-close" class="modal__close-btn"><i class="fas fa-times"></i></a>
+
+            <div class="modal__header">
+                <div style="font-size: 10px; position: absolute; top: 10px; right: 40%;">-- WORK IN PROGRESS SECTION --</div>
+                <!-- <h2>Gallery</h2> -->
+            </div>
+
+            <div class="modal__body">
+                <div class="mySlides" data-description="gallery_img_1 description">
+                    <img src="./resources/img/gallery/full-size/1-.png" alt="gallery_img_1" style="width:50%">
+                    <div class="numbertext">1 / 8</div>
+                </div>
+            
+                <div class="mySlides" data-description="gallery_img_2 description">
+                    <img src="./resources/img/gallery/full-size/2-.png" alt="gallery_img_2" style="width:70%">
+                    <div class="numbertext">2 / 8</div>
+                </div>
+            
+                <div class="mySlides" data-description="gallery_img_3 description">
+                    <img src="./resources/img/gallery/full-size/3-.png" alt="gallery_img_3" style="width:70%">
+                    <div class="numbertext">3 / 8</div>
+                </div>
+            
+                <div class="mySlides" data-description="gallery_img_4 description">
+                    <img src="./resources/img/gallery/full-size/4-.png" alt="gallery_img_4" style="width:50%">
+                    <div class="numbertext">4 / 8</div>
+                </div>
+
+                <div class="mySlides" data-description="gallery_img_5 description">
+                    <img src="./resources/img/gallery/full-size/5-.png" alt="gallery_img_5" style="width:50%">
+                    <div class="numbertext">5 / 8</div>
+                </div>
+            
+                <div class="mySlides" data-description="gallery_img_6 description">
+                    <img src="./resources/img/gallery/full-size/6-.png" alt="gallery_img_6" style="width:70%">
+                    <div class="numbertext">6 / 8</div>
+                </div>
+            
+                <div class="mySlides" data-description="gallery_img_7 description">
+                    <img src="./resources/img/gallery/full-size/7-.png" alt="gallery_img_7" style="width:70%">
+                    <div class="numbertext">7 / 8</div>
+                </div>
+            
+                <div class="mySlides" data-description="gallery_img_8 description">
+                    <img src="./resources/img/gallery/full-size/8-.png" alt="gallery_img_8" style="width:70%">
+                    <div class="numbertext">8 / 8</div>
+                </div>
+
+                <!-- <div class="lightbox__controls"> -->
+                    <a class="--prev"><i class="fas fa-angle-left"></i></a>
+                    <a class="--next"><i class="fas fa-angle-right"></i></a>
+                <!-- </div> -->
+
+            </div>
+            
+            <div class="modal__footer">
+                <div class="row">
+                    <div class="caption-container">
+                        <p id="caption"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
