@@ -250,13 +250,13 @@
                 position: relative;
 
                 .about_img {
-                    background-image: url('img/../../../img/placeholders/about_img.jpg');
-                    background-position: center;
-                    background-size: 100%;
+                    background-image: url('img/../../../img/about_img.png');
+                    background-position: top;
+                    background-size: cover;
                     background-repeat: no-repeat;
                     border-radius: 15px;
                     width: 85%;
-                    height: 320px;
+                    height: 350px;
                     box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
                     animation: float 2.3s ease infinite forwards;
                 }
@@ -337,7 +337,7 @@
     //         border-bottom: 1px solid rgba(0,0,0,0.13);
     //     }
     //     .left {
-    //         text-align: right;
+    //         text-align: left;
     //         margin-right: 5px;
     //         margin-left: 120px;
     //     }
@@ -378,11 +378,12 @@
     //         height: 150px;
     //         background-color: $color-background-contrast;
     //         position: relative;
-    
-    //         background-image: url(img/../../../img/backgrounds/triangles.png);
-    //         background-repeat: no-repeat;
-    //         background-position: top;
+    //         overflow: hidden;
     //         text-align: center;
+    
+    //         // background-image: url(img/../../../img/backgrounds/triangles.png);
+    //         // background-repeat: no-repeat;
+    //         // background-position: top;
     
     //         .quote {
     //             font-family: $font-secondary;
@@ -508,8 +509,6 @@
                         display: flex;
                         justify-content: center;
                         transition: right 0.5s ease-in-out, top 0.5s ease-in-out;
-                        right: -225px;
-                        top: -225px;
                         transform: rotate(45deg);
                         height: 250px;
                         width: 250px;
@@ -517,6 +516,10 @@
                         position: absolute;
                         box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
                         
+                        right: -225px;
+                        top: -225px;
+                        // right: -50%;
+                        // top: -50%;
 
                         p {
                             color: $color-background;
@@ -539,6 +542,8 @@
                     &:hover > .showcase_photo_about {
                         right: -125px;
                         top: -125px;
+                        // right: -25%;
+                        // top: -25%;
                     }
 
                     &:hover > img {
@@ -676,10 +681,13 @@
         // TODO: reconfigure to use BEM
         .section-terms {
             background-color: $color-background;
-            background-image: url(img/../../../img/backgrounds/triangles.png);
-            background-repeat: no-repeat;
-            background-position: bottom;
+            // background-image: url(img/../../../img/backgrounds/triangles.png);
+            // background-repeat: no-repeat;
+            // background-position: bottom;
+            position: relative;
             text-align: center;
+            overflow: hidden;
+            padding-bottom: 8%;
 
             .box {
                 padding: 1%;

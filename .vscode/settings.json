@@ -9,7 +9,7 @@
     "liveSassCompile.settings.excludeList": [ 
         "**/node_modules/**",
         ".vscode/**",
-        "vendors/**"
+        "vendors/**",
         "resources/css/utilities/**",
     ],
 }
