@@ -250,13 +250,13 @@
                 position: relative;
 
                 .about_img {
-                    background-image: url('img/../../../img/placeholders/about_img.jpg');
-                    background-position: center;
-                    background-size: 100%;
+                    background-image: url('img/../../../img/about_img.png');
+                    background-position: top;
+                    background-size: cover;
                     background-repeat: no-repeat;
                     border-radius: 15px;
                     width: 85%;
-                    height: 320px;
+                    height: 350px;
                     box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
                     animation: float 2.3s ease infinite forwards;
                 }

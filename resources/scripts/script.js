@@ -113,6 +113,7 @@ $(document).ready(function () {
             $('.sparkle').css("backgroundImage", "url(./resources/img/sprites/sparkle-dark.png)");
     
             $(".js--switch-lights input[type='checkbox']").prop('checked', false);
+            $(".js--switch-lights").attr('data-tooltip', 'Enable dark mode.');
         }else {
             root.style.setProperty('--js-main', mainDark);
             root.style.setProperty('--js-main-offset', offsetDark);
@@ -125,6 +126,7 @@ $(document).ready(function () {
             $('.sparkle').css("backgroundImage", "url(./resources/img/sprites/sparkle-light.png)");
     
             $(".js--switch-lights input[type='checkbox']").prop('checked', true);
+            $(".js--switch-lights").attr('data-tooltip', 'Disable dark mode.');
         }
     /*-----------------------------------------------*/
     
@@ -140,6 +142,7 @@ $(document).ready(function () {
                 $('.light').css("backgroundImage", "url(./resources/img/sprites/light-light.png)");
                 $('.pop').css("backgroundImage", "url(./resources/img/sprites/pop-light.png)");
                 $('.sparkle').css("backgroundImage", "url(./resources/img/sprites/sparkle-light.png)");
+                $(".js--switch-lights").attr('data-tooltip', 'Disable dark mode.');
 
                 localStorage.setItem('darkMode', 'true');
                 darkMode = localStorage.getItem('darkMode');
@@ -154,6 +157,7 @@ $(document).ready(function () {
                 $('.light').css("backgroundImage", "url(./resources/img/sprites/light-dark.png)");
                 $('.pop').css("backgroundImage", "url(./resources/img/sprites/pop-dark.png)");
                 $('.sparkle').css("backgroundImage", "url(./resources/img/sprites/sparkle-dark.png)");
+                $(".js--switch-lights").attr('data-tooltip', 'Enable dark mode.');
 
                 localStorage.setItem('darkMode', 'false');
                 darkMode = localStorage.getItem('darkMode');
