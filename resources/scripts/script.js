@@ -44,10 +44,6 @@ $(document).ready(function () {
 
         $('body').removeClass('scroll-lock');
 
-        $('html, body').animate({
-            scrollTop: ($('#showcase').offset().top - 60)
-        },500);
-
     });
 
     /*-------------------- COLOUR THEME --------------------*/
@@ -227,8 +223,11 @@ $(document).ready(function () {
     }); 
 
     /* waypoint triggers */
-    $('#js--page-content').waypoint(function(direction) {
-        if (direction === 'down') {
+    const hidePoint = document.querySelector('.js--about-button');
+
+    navObserver = new IntersectionObserver(_entries => {
+        if (_entries[0].intersectionRatio === 0) {
+
             $('nav').addClass('sticky-nav');
             $('nav').addClass('animation--slide-in');
             $('.back-to-top').removeClass('hidden');
@@ -242,23 +241,30 @@ $(document).ready(function () {
                 $('.back-to-top').removeClass('animation--slide-in--right');
             }, 280); // remove the animation class so it doesn't keep repeating
 
-        }else {
-            $('nav').addClass('animation--slide-out');
-            $('.back-to-top').addClass('animation--slide-out--right');
 
-            setTimeout(() => {
-                $('nav').removeClass('animation--slide-out');
-                $('nav').removeClass('sticky-nav');
-            }, 90); // remove the animation class so it doesn't keep repeating
-            
-            setTimeout(() => {
-                $('.back-to-top').removeClass('animation--slide-out--right');
-                $('.back-to-top').addClass('hidden');
-            }, 280); // remove the animation class so it doesn't keep repeating
+        }else {
+
+            if (!window.scrollY == 0) { // if the window is not at the top of the page
+
+                $('nav').addClass('animation--slide-out');
+                $('.back-to-top').addClass('animation--slide-out--right');
+    
+                setTimeout(() => {
+                    $('nav').removeClass('animation--slide-out');
+                    $('nav').removeClass('sticky-nav');
+                }, 90); // remove the animation class so it doesn't keep repeating
+                
+                setTimeout(() => {
+                    $('.back-to-top').removeClass('animation--slide-out--right');
+                    $('.back-to-top').addClass('hidden');
+                }, 280); // remove the animation class so it doesn't keep repeating
+
+            }
+
         }
-    }, {
-        offset: '70px'
-    })
+    });
+
+    navObserver.observe(hidePoint);
 
 });
 

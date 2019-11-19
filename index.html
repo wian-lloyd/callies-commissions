@@ -66,8 +66,8 @@
             <!-- NAVIGATION -->
             <nav>
                 <div class="row">
-                    <img src="/resources/img/logos/logo.png" alt="logo" class="nav__logo">
-                    <img src="/resources/img/logos/logo.png" alt="logo" class="nav__logo--sticky">
+                    <img src="/resources/img/logos/logo.png" alt="logo" class="nav__logo animated zoomInDown delay-2">
+                    <img src="/resources/img/logos/logo.png" alt="logo" class="nav__logo--sticky animated pulse delay-2s">
                     <ul class="main-nav">
                         <li class="main-nav__item">
                             <a class="anchor anchor--main" href="#about">About</a>
@@ -101,10 +101,12 @@
                                 <li class="sub-nav__item"><a class="anchor anchor--sub" href="#terms">Terms of Service</a></li>
                             </ul>
                         </li>
-                        <label class="switch js--switch-lights tooltip tooltip--bottom" data-tooltip="Enable/Disable dark mode.">
-                            <input type="checkbox">
-                            <span class="slider slider--round"></span>
-                        </label>
+                        <li class="main-nav__item">
+                            <label class="switch js--switch-lights tooltip tooltip--bottom" data-tooltip="Enable/Disable dark mode.">
+                                <input type="checkbox">
+                                <span class="slider slider--round"></span>
+                            </label>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -592,7 +594,7 @@
     <!-- LIGHTBOX MODAL -->
     <div id="lightboxModal" class="hidden">
         <div class="modal">
-            <a href="#" id="js--lightbox-modal-close" class="modal__close-btn"><i class="fas fa-times"></i></a>
+            <a href="javascript:void(0)" id="js--lightbox-modal-close" class="modal__close-btn"><i class="fas fa-times"></i></a>
 
             <div class="modal__header">
                 <div style="font-size: 10px; position: absolute; top: 10px; right: 40%;">-- WORK IN PROGRESS SECTION --</div>
