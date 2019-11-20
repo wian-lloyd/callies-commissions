@@ -8,26 +8,30 @@
     <!-- TODO: change this meta info before official launch -->
 
     <!-- GENERAL META -->
-    <meta name="description" content="Callie website prototype.">
-    <!-- <meta property="og:title" content=""> -->
-    <!-- <meta property="og:description" content=""> -->
-    <!-- <meta property="og:image" content=""> -->
-    <!-- <meta property="og:url" content=""> -->
-    <!-- <meta property="og:site_name" content=""> -->
+    <meta name="description" content="Hello, My name's Callie and I'm an Asian self taught digital artist!">
+    <meta name="robots" content="noindex,follow">
+    <meta name="author" content="Callie, callieebusiness@gmail.com">
+
+    <meta property="og:title" content="Callie’s Commissions">
+    <meta property="og:description" content="Hello, My name's Callie and I'm an Asian self taught digital artist!">
+    <meta property="og:image" content="/resources/img/logos/logo.png">
+    <meta property="og:url" content="https://callies-commissions.netlify.com">
+    <meta property="og:site_name" content="Callie’s Commissions">
 
     <!-- MICROSOFT META -->
-    <!-- <meta name="msapplication-TileColor" content="#da532c"> -->
-    <!-- <meta name="msapplication-TileImage" content="/resources/favicons/mstile-144x144.png"> -->
-    <!-- <meta name="msapplication-config" content="/resources/favicons/browserconfig.xml"> -->
-    <!-- <meta name="theme-color" content="#ffffff"> -->
+    <meta name="msapplication-TileColor" content="#EA9999">
+    <meta name="msapplication-TileImage" content="/resources/img/logos/logo.png">
+    <meta name="msapplication-config" content="/resources/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#333">
 
     <!-- TWITTER META -->
-    <!-- <meta name="twitter:title" content=""> -->
-    <!-- <meta name="twitter:description" content=""> -->
-    <!-- <meta name="twitter:image" content=""> -->
-    <!-- <meta name="twitter:image:alt" content=""> -->
+    <meta name="twitter:title" content="Callie’s Commissions">
+    <meta name="twitter:description" content="Hello, My name's Callie and I'm an Asian self taught digital artist!">
+    <meta name="twitter:image" content="/resources/img/logos/logo.png">
+    <meta name="twitter:image:alt" content="logo_img">
+    <meta name="twitter:creator" content="@callieearts">
+    <meta name="twitter:site" content="https://callies-commissions.netlify.com">
     <!-- <meta name="twitter:card" content=""> -->
-    <!-- <meta name="twitter:site" content=""> -->
 
     <!-- FACEBOOK META -->
     <!-- <meta property="fb:app_id" content=""/> --> 
@@ -66,8 +70,8 @@
             <!-- NAVIGATION -->
             <nav>
                 <div class="row">
-                    <img src="/resources/img/logos/logo.png" alt="logo" class="nav__logo">
-                    <img src="/resources/img/logos/logo.png" alt="logo" class="nav__logo--sticky">
+                    <img src="/resources/img/logos/logo.png" alt="logo" class="nav__logo animated zoomInDown delay-2">
+                    <img src="/resources/img/logos/logo.png" alt="logo" class="nav__logo--sticky animated pulse delay-2s">
                     <ul class="main-nav">
                         <li class="main-nav__item">
                             <a class="anchor anchor--main" href="#about">About</a>
@@ -101,10 +105,12 @@
                                 <li class="sub-nav__item"><a class="anchor anchor--sub" href="#terms">Terms of Service</a></li>
                             </ul>
                         </li>
-                        <label class="switch js--switch-lights tooltip tooltip--bottom" data-tooltip="Enable/Disable dark mode.">
-                            <input type="checkbox">
-                            <span class="slider slider--round"></span>
-                        </label>
+                        <li class="main-nav__item">
+                            <label class="switch js--switch-lights tooltip tooltip--bottom" data-tooltip="Enable/Disable dark mode.">
+                                <input type="checkbox">
+                                <span class="slider slider--round"></span>
+                            </label>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -307,7 +313,7 @@
             </section>
 
             <!-- TWITCH SECTION -->
-            <section class="section-twitch" id="twitch">
+            <!-- <section class="section-twitch" id="twitch">
                 <h6>
                     <img src="./resources/img/brand-logos/twitch.svg" alt="twitch_logo">
                     <br>
@@ -386,7 +392,7 @@
                         <div>Games</div>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
             <!-- TERMS OF SERVICE SECTION -->
             <section class="section-terms js--section-terms" id="terms">
@@ -592,7 +598,7 @@
     <!-- LIGHTBOX MODAL -->
     <div id="lightboxModal" class="hidden">
         <div class="modal">
-            <a href="#" id="js--lightbox-modal-close" class="modal__close-btn"><i class="fas fa-times"></i></a>
+            <a href="javascript:void(0)" id="js--lightbox-modal-close" class="modal__close-btn"><i class="fas fa-times"></i></a>
 
             <div class="modal__header">
                 <div style="font-size: 10px; position: absolute; top: 10px; right: 40%;">-- WORK IN PROGRESS SECTION --</div>

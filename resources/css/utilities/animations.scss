@@ -20,15 +20,6 @@
         animation: overlay-out 0.2s;
     }
 
-    @keyframes overlay-in {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-    }
-    @keyframes overlay-out {
-        0% { opacity: 1; }
-        100% { opacity: 0; }
-    }
-
     &--modal-in {
         animation: modal-in 0.5s ease-in-out;
         animation-delay: 0.2s;
@@ -72,6 +63,16 @@
         -o-animation:      bounce 1s ease-in-out infinite; /* Opera 12+ */
         animation:         bounce 1s ease-in-out infinite; /* IE 10+, Fx 29+ */
     }
+}
+
+// overlay fade in & out
+@keyframes overlay-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes overlay-out {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 // twitch text jump
