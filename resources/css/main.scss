@@ -72,8 +72,8 @@
         }
 
         .scroll-lock {
-            height: 100%;
-            overflow: hidden;
+            // height: 100%;
+            // overflow: hidden;
         } // disable scrolling when applied to the body
 
         .parallax-mirror {
@@ -505,8 +505,10 @@
                         -ms-user-select: none; /* IE10+/Edge */
                         user-select: none; /* Standard */
 
+
                         z-index: 3;
-                        display: flex;
+                        // display: flex;
+                        display: none;
                         justify-content: center;
                         transition: right 0.5s ease-in-out, top 0.5s ease-in-out;
                         transform: rotate(45deg);
@@ -516,8 +518,8 @@
                         position: absolute;
                         box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
                         
-                        right: -225px;
-                        top: -225px;
+                        // right: -225px;
+                        // top: -225px;
                         // right: -50%;
                         // top: -50%;
 
@@ -540,10 +542,12 @@
                     }
 
                     &:hover > .showcase_photo_about {
-                        right: -125px;
-                        top: -125px;
-                        // right: -25%;
-                        // top: -25%;
+                        // right: -125px;
+                        // top: -125px;
+                        // right: -27%;
+                        // top: -30%;
+                        // right: -40%;
+                        // top: -44%;
                     }
 
                     &:hover > img {
@@ -728,7 +732,6 @@
     /* -------------------- modal -------------------- */
         #lightboxModal {
             .modal {
-                // width: 65%;
                 &__body {
                     display: flex;
                     align-items: center;

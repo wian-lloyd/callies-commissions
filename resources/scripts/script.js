@@ -164,6 +164,9 @@ $(document).ready(function () {
 
     /*--------------------- TRIGGERS ---------------------*/
     $(".js--switch-lights").mouseup(darkModeSwitch); // toggle dark mode
+    $(".js--switch-lights").bind('contextmenu', function(e) {
+        return false;
+    }); 
 
     $('#js--feedback-modal-close').click(() => {
 

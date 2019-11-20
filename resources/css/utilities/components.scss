@@ -460,7 +460,7 @@ section {
         }
     }
 
-    input:checked + .slider {
+    input:checked, + .slider {
         background-color: $color-background-dark;
 
         &::before {
